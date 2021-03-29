@@ -10,10 +10,23 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="estilos.css">
     </head>
     <body>
         <h1>a1 </h1>
+        <!-- -Highlithg JS codigo añadido hay que moverlo a su respectivo archivo --> 
+        <script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"> </script>;
+        <script>hljs.highlightAll();</script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/sunburst.min.css">
+
+        <pre class="pre">
+            <code>$(function() {
+                $('pre code').each(function(i, block) {
+                  hljs.highlightBlock(block);
+                });
+              });</code>
+        </pre>
+
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->

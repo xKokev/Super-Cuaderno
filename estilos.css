@@ -1,0 +1,13 @@
+.pre {
+    background: #000000;
+    -webkit-border-radius: 10px;
+    border-radius: 20px;
+    font-family: Consolas,sans-serif;
+    padding: 1px;
+    font-size: 1.3em;
+    color: #fff;
+    overflow: auto;
+    width: 60%;
+   position: center;
+   
+} 
