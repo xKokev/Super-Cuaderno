@@ -3,10 +3,10 @@
     -webkit-border-radius: 10px;
     border-radius: 20px;
     font-family: Consolas,sans-serif;
-    padding: 1px;
-    font-size: 1.3em;
+    padding: 0.5px;
+    font-size: 2em;
     overflow: auto;
-    width: 70%;
+    width: 100%;
    position: center;
    
 } 
@@ -14,15 +14,31 @@
     background: #000000;
     margin-inline: auto;
     background-position: center;
-    width:28%;
+    width:49%;
     height:  100vh;
     border-radius: 20px;
     color: #fff;font-family: Consolas,sans-serif;
     padding: 1px;
-    font-size: 1.3em;
+    font-size: 2em;
     overflow: auto;
     position: center;
     
+}
+.next {
+    background: #200101;
+    margin-inline: auto;
+    background-position: center;
+    width:7%;
+    height:  3vh;
+    border-radius: 10px;
+    color: #fff;font-family: Consolas,sans-serif;
+    padding: 1px;
+    font-size: 1.3em;
+    position: absolute;
+    left:1400px;
+    top: 10px;
+    text-align: center ;
+   
 }
 
 #pantalla-dividida {
