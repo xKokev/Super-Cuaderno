@@ -5,9 +5,26 @@
     font-family: Consolas,sans-serif;
     padding: 1px;
     font-size: 1.3em;
-    color: #fff;
     overflow: auto;
-    width: 60%;
+    width: 70%;
    position: center;
    
 } 
+.derecha {
+    background: #000000;
+    margin-inline: auto;
+    background-position: center;
+    width:28%;
+    height:  100vh;
+    border-radius: 20px;
+    color: #fff;font-family: Consolas,sans-serif;
+    padding: 1px;
+    font-size: 1.3em;
+    overflow: auto;
+    position: center;
+    
+}
+
+#pantalla-dividida {
+    display: flex;
+}

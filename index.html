@@ -13,24 +13,81 @@
         <link rel="stylesheet" href="estilos.css">
     </head>
     <body>
-        <h1>a1 </h1>
         <!-- -Highlithg JS codigo añadido hay que moverlo a su respectivo archivo --> 
-        <script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"> </script>;
+        <script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"> </script>
         <script>hljs.highlightAll();</script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/sunburst.min.css">
-
+        <h1>Hola 😏 </h1>
+        <section id="pantalla-dividida">
         <pre class="pre">
-            <code>$(function() {
-                $('pre code').each(function(i, block) {
-                  hljs.highlightBlock(block);
-                });
-              });</code>
+            <code class="javascript">$(function() {
+                const jon = {
+                    nombre: "Jon",
+                    apellido: "MirCha",
+                    edad: 35,
+                    pasatiempos: ["Correr", "Hacer ejercicio", "Dar clases"],
+                    soltero: false,
+                    contacto: {
+                      email: "jonmircha@gmail.com",
+                      twitter: "@jonmircha",
+                      movil: "5215512345678"
+                    },
+                    saludar: function () {
+                      console.log(`Hola :)`)
+                    },
+                    decirMiNombre: function () {
+                      console.log(`Hola me llamo ${this.nombre} ${this.apellido} 
+                      y tengo ${this.edad} años y me puedes seguir 
+                      como ${this.contacto.twitter} en twitter.`)
+                    }
+                  }
+                  console.log(jon);
+                  console.log(jon["nombre"]);
+                  console.log(jon["apellido"]);
+                  console.log(jon.nombre);
+                  console.log(jon.apellido);
+                  console.log(jon.edad);
+                  console.log(jon.soltero);
+                  console.log(jon.pasatiempos);
+                  console.log(jon.pasatiempos[1]);
+                  console.log(jon.contacto);
+                  console.log(jon.contacto.twitter);
+                  jon.saludar();
+                  jon.decirMiNombre();
+                  console.log(Object.keys(jon));
+                  console.log(Object.values(jon));
+                  console.log(jon.hasOwnProperty("nombre"));
+                  console.log(jon.hasOwnProperty("nacimiento"));
+            </code>
         </pre>
+<pre class="derecha">
+    <code class="html">
+        😂
+      
 
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        vamo a juga
+    </code>
+</pre>
+       
         
         <script src="" async defer></script>
+    </section>
     </body>
 </html>
