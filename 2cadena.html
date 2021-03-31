@@ -19,14 +19,50 @@
         <script>hljs.highlightAll();</script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/sunburst.min.css">
 
-      <h1>Curso JavaScript: 4. Constantes </h1>
+      <h1>Template Strings </h1>
       <br  />
       <h2>😏 🦊 😎 💩 🐱 🎲 🙈 🤡 🏎 🔫 🐸  </h2>
       <a href="2cadena.html" class="next">Vaumoos </a>
        
     <pre class="pre">
         <code class="javascript">
-             
+            😏 Longitud y todo a mayusculas
+                let nombre = "Jon";
+                console.log(nombre.length, nombre.toUpperCase());
+            3 "JON"
+            
+            🦊 Longitud y todo a minusculas
+                let apellido = 'MirCha';
+                console.log(apellido.length, apellido.toLowerCase())
+            6 "mircha"
+
+            😎 La frase tiene o no tiene palabras
+                let lorem = "       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est, et dolorum. 
+                Adipisci sequi, voluptates accusamus earum magnam non pariatur odit consequuntur dicta modi.
+                 Quam soluta aliquid nam ea quod dolore.      ";
+                console.log(lorem.includes("amet"),
+                lorem.includes("jon")
+                );  
+            true false
+
+            💩 Quitar espacios en blanco 
+                console.log(            
+                lorem.trim(),
+                );   
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est, et dolorum. Adipisci sequi, voluptates accusamus earum magnam non pariatur odit consequuntur dicta modi. Quam soluta aliquid nam ea quod dolore.  
+
+            🐱 Divide un objeto de tipo String en un array y le agrega lo que quieras
+                console.log(            
+                lorem.split(" ")
+              );   
+            ["", "", "", "", "", "", "", "Lorem", "ipsum,", "dolor", "sit", "amet", "consectetur", "adipisicing", "elit.", "Est,", "et", "dolorum.", "Adipisci", "sequi,", "voluptates", "accusamus", "earum", "magnam", "non", "pariatur", "odit", "consequuntur", "dicta", "modi.", "Quam", "soluta", "aliquid", "nam", "ea", "quod", "dolore.", "", "", "", "", "", ""]
+
+            🎲 
+                console.log(            
+                lorem.split(",")
+                );  
+            ["       Lorem ipsum", " dolor sit amet consectetur adipisicing elit. Est", " et dolorum. Adipisci sequi", " voluptates accusamus earum magnam non pariatur od…di. Quam soluta aliquid nam ea quod dolore.      "]
+
         </code>
     </pre>
 
