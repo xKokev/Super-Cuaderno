@@ -22,35 +22,47 @@
        
     <pre class="pre">
         <code class="javascript">
-        🦊  console.log(a);
-            const a = [];
-        []
+        🦊  Crear y rellenar un array con un elemento 
+            const d = Array(5).fill(false);
+            console.log(d);
+        [false, false, false, false, false]
+        
 
-        😎  const b = [1, true, "Hola", ["A", "B", "C", [1, 2, 3]]];
-
-        😏 Imprimir el array
+        😎  Imprimir, longitud y acceder al array
+            const b = [1, true, "Hola", ["A", "B", "C", [1, 2, 3]]];
+        😏  Imprimir el array
             console.log(b);
         [1, true, "Hola", Array(4)]
-
         💩  Tamaño del array 
-        console.log(b.length);
-        4
-        
-        🐱 Imprimir posicion 2 del arrray b 
-        console.log(b[2]);
-        Hola
-
-        🙈 Imprimir posicion 3 del array b   
-        console.log(b[3]);
-        ["A", "B", "C", Array(3)]
-        🤡  console.log(b[3][2]);
-        C
+            console.log(b.length);
+        4   Imprimir elemento     
         🏎  console.log(b[3][3][0]);
         1
-        </code>
-    </pre>
+
+        🎲  Añadir elemento al array
+            const colores = ["Rojo", "Verde", "Azul"];
+            colores.push("Negro");
+            console.log(colores);
+        ["Rojo", "Verde", "Azul", "Negro"]
+        
+        🙈  Quitar el ultimo elemento del array
+            colores.pop();
+            console.log(colores);
+        ["Rojo", "Verde", "Azul"]    
+
+        🤡  De array a lista (estan al reves las > <)
+            colores.forEach(function (el, index) {
+            console.log(`>li id="${index}"< >/li<${el}>/li>`);
+            });  
+        <li id="0">Rojo</li>
+        <li id="1">Verde</li>
+        <li id="2">Azul</li>
+
 
         
+        
+        </code>
+    </pre>       
         <script src="" async defer></script>
     
     </body>
