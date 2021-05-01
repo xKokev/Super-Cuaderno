@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="estilos.css">
+        <link rel="shortcut icon" href="son-goku.png"> 
+    </head>
+    <body>
+        <!-- -Highlithg JS codigo añadido hay que moverlo a su respectivo archivo --> 
+        <script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"> </script>
+        <script>hljs.highlightAll();</script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/sunburst.min.css">
+
+      <h1>Break and continue </h1>
+      <br  />
+    <pre class="pre">
+        <code class="javascript">
+            🚁 try {
+                console.log("En el Try se agrega el código a evaluar");
+                noExiste;
+                console.log("Segundo mensaje en el try");
+               } catch (error) {
+                console.log("Catch, captura cualquier error surgido o lanzado en el try");
+                console.log(error);
+               } finally {
+                console.log("El bloque finally se ejecutará siempre al final de unbloque try-catch");
+               }
+
+            🕶  try {
+                let numero = "y";
+                if (isNaN(numero)) {
+                  throw new Error("El caractér introducido no es un Número");
+                }
+                console.log(numero * numero);
+                } catch (error) {
+                console.log(`Se produjo el siguiente error: ${error}`);
+                }
+        </code>
+    </pre>       
+        <script src="" async defer></script>
+    
+    </body>
+</html>
