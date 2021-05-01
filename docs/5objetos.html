@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="estilos.css">
+        <link rel="shortcut icon" href="son-goku.png"> 
+    </head>
+    <body>
+        <!-- -Highlithg JS codigo añadido hay que moverlo a su respectivo archivo --> 
+        <script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"> </script>
+        <script>hljs.highlightAll();</script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/sunburst.min.css">
+
+      <h1>Objetos </h1>
+      <br  />
+      <h2>😏 🦊 😎 💩 🐱 🎲 🙈 🤡 🏎 🔫 🐸  </h2>
+      
+       
+    <pre class="pre">
+        <code class="javascript">
+            const jon = {
+                nombre: "Jon",
+                apellido: "MirCha",
+                edad: 35,
+                pasatiempos: ["Correr", "Hacer ejercicio", "Dar clases"],
+                soltero: false,
+                contacto: {
+                  email: "jonmircha@gmail.com",
+                  twitter: "@jonmircha",
+                  movil: "5215512345678"
+                },
+                saludar: function () {
+                  console.log(`Hola :)`)
+                },
+                decirMiNombre: function () {
+                  console.log(`Hola me llamo ${this.nombre} ${this.apellido} y tengo ${this.edad} años y me puedes seguir como ${this.contacto.twitter} en twitter.`)
+                }
+              }
+              😏  console.log(jon);
+              // {nombre: "Jon", apellido: "MirCha", edad: 35, pasatiempos: Array(3), soltero: false, …}
+
+              🦊 console.log(jon["nombre"]);
+              // Jon
+
+              😎 console.log(jon["apellido"]);
+              // MirCha
+              
+              💩 console.log(jon.nombre);
+              // Jon
+              
+              🐱 console.log(jon.apellido);
+              // MirCha
+
+              🎲 console.log(jon.edad);
+              // 35
+
+              🙈 console.log(jon.soltero);
+              // false
+
+              🤡 console.log(jon.pasatiempos);
+              // (3) ["Correr", "Hacer ejercicio", "Dar clases"]
+
+              🏎 console.log(jon.pasatiempos[1]);
+              // Hacer ejercicio
+
+              🐸 console.log(jon.contacto);
+              // {email: "jonmircha@gmail.com", twitter: "@jonmircha", movil: "5215512345678"}
+
+              🔫 console.log(jon.contacto.twitter);
+              // @jonmircha
+
+              😈 jon.saludar();
+              // Hola :)
+
+              🧠 jon.decirMiNombre();
+              // Hola me llamo Jon MirCha y tengo 35 años y me puedes seguir como @jonmircha en twitter.
+
+              🐷 console.log(Object.keys(jon));
+              // (8) ["nombre", "apellido", "edad", "pasatiempos", "soltero", "contacto", "saludar", "decirMiNombre"]
+
+              🙈 console.log(Object.values(jon));
+              // (8) ["Jon", "MirCha", 35, Array(3), false, {…}, ƒ, ƒ]
+
+              🌎 console.log(jon.hasOwnProperty("nombre"));
+              // true
+
+              ☎ console.log(jon.hasOwnProperty("nacimiento"));
+              // false 
+                  
+        </code>
+    </pre>       
+        <script src="" async defer></script>
+    
+    </body>
+</html>
