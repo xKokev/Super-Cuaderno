@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="estilos.css">
+        <link rel="shortcut icon" href="son-goku.png"> 
+    </head>
+    <body>
+        <!-- -Highlithg JS codigo añadido hay que moverlo a su respectivo archivo --> 
+        <script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"> </script>
+        <script>hljs.highlightAll();</script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/sunburst.min.css">
+
+      <h1>Prototipos</h1>
+      <br  />
+    <pre class="pre">
+        <code class="javascript">
+            Clases - Modelo a seguir.
+            Objetos - Es una instancia de una clase
+            🦝 Atributos - es una característica o propiedad del objeto (son variables dentro de un objeto)
+            🐙 Métodos - son las acciones que un objeto puede realizar (son funciones dentro de un objeto)
+
+                😸  const animal = {
+                    nombre: "Snoopy",
+                    sonar() {
+                    console.log("Hago sonidos por que estoy vivo");
+                    }
+                    }
+                console.log(animal);
+                // {nombre: "Snoopy", sonar: ƒ}
+
+                🤡  const animal2 = {
+                    nombre: "Lola Bunny",
+                    sonar() {
+                    console.log("Hago sonidos por que estoy vivo");
+                    }
+                    }
+                console.log(animal2);                
+                // {nombre: "Lola Bunny", sonar: ƒ}
+
+                🐤 Función constructora donde asignamos los métodos al Prototipo, no a la función como tal
+
+                    🐁 function Animal(nombre, genero) {
+                    //Atributos
+                    this.nombre = nombre;
+                    this.genero = genero;
+
+                    //Métodos 
+                    this.sonar = function () {
+                      console.log("Hago sonidos por que estoy vivo");
+                    }
+                    this.saludar = function () {
+                      console.log(`Hola me llamo ${this.nombre}`);
+                    }
+                    }
+                    Función constructora donde asignamos los métodos al Prototipo, no a la función como tal
+                    /*  function Animal(nombre, genero) {
+                       //Atributos
+                       this.nombre = nombre;
+                       this.genero = genero;
+                     } */
+                
+                    //Métodos agregados al prototipo de la función constructora
+                    /* Animal.prototype.sonar = function () {
+                      console.log("Hago sonidos por que estoy vivo");
+                    }
+                    Animal.prototype.saludar = function () {
+                      console.log(`Hola me llamo ${this.nombre}`);
+                    } */
+                
+                    //Herencia Prototípica
+                    /* function Perro(nombre, genero, tamanio) {
+                      this.super = Animal;
+                      this.super(nombre, genero);
+                      this.tamanio = tamanio;
+                    } */
+                
+                    //Perro está heredando de Animal
+                    /*  Perro.prototype = new Animal();
+                     Perro.prototype.constructor = Perro; */
+                
+                    //Sobreescritura de métodos del Prototipo padre en el hijo
+                    /* Perro.prototype.sonar = function () {
+                      console.log("Soy un perro y mi sonido es un ladrido");
+                    }
+                    Perro.prototype.ladrar = function () {
+                      console.log("Guauuu Guauuu !!!!");
+                    } */
+                
+                    /* const snoopy = new Perro("Snoopy", "Macho", "Mediano"),
+                      lolaBunny = new Animal("Lola Bunny", "Hembra");
+                    console.log(snoopy);
+                    console.log(lolaBunny);
+                    snoopy.sonar();
+                    snoopy.saludar();
+                    snoopy.ladrar();
+                    lolaBunny.sonar();
+                    lolaBunny.saludar();
+        </code>
+    </pre>       
+        <script src="" async defer></script>
+    
+    </body>
+</html>
