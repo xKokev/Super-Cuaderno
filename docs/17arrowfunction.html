@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="estilos.css">
+        <link rel="shortcut icon" href="son-goku.png"> 
+    </head>
+    <body>
+        <!-- -Highlithg JS codigo añadido hay que moverlo a su respectivo archivo --> 
+        <script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"> </script>
+        <script>hljs.highlightAll();</script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/sunburst.min.css">
+
+      <h1>Arrow Functions</h1>
+      <br  />
+    <pre class="pre">
+        <code class="javascript">
+               const saludar = () => console.log(`Hola`);
+          🍪   saludar(); 
+          // Hola 
+        
+              const saludar = nombre => console.log(`Hola ${nombre}`);
+          🍷    saludar("Irma");
+          // Hola Irma 
+
+          🧀  Dos opciones validas para una sola linea
+            🧀  const sumar = function (a, b) {
+                return a + b;
+                } 
+            🧀  const sumar = (a, b) => a + b;
+          
+          🍾  const funcionDeVariasLineas = () => {
+              console.log("Uno");
+              console.log("Dos");
+              console.log("Tres");
+              }
+          funcionDeVariasLineas();
+          // Uno
+          // Dos
+          // Tres
+          
+          🍩   const numeros = [1, 2, 3, 4, 5];
+               numeros.forEach((el, index) => console.log(`${el} esta en la posición ${index}`));
+          // 1 esta en la posición 0
+          // 2 esta en la posición 1
+          // 3 esta en la posición 2
+          // 4 esta en la posición 3
+          // 5 esta en la posición 4    
+          
+          
+          🍕   function Perro() {
+               console.log(this);
+               }
+          Perro(); 
+          // Window {window: Window, self: Window, document: document, name: "", location: Location, …}
+
+          🍨   const perro = {
+               nombre: "kenai",
+               ladrar() {
+               console.log(this)
+               }
+               }
+          perro.ladrar(); 
+          // {nombre: "kenai", ladrar: ƒ}
+        </code>
+    </pre>       
+        <script src="" async defer></script>
+    
+    </body>
+</html>

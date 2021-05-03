@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="estilos.css">
+        <link rel="shortcut icon" href="son-goku.png"> 
+    </head>
+    <body>
+        <!-- -Highlithg JS codigo añadido hay que moverlo a su respectivo archivo --> 
+        <script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"> </script>
+        <script>hljs.highlightAll();</script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/sunburst.min.css">
+
+      <h1>Objetos Literales</h1>
+      <br  />
+    <pre class="pre">
+        <code class="javascript">
+            let nombre = "kEnAi",
+            edad = 7;
+          const perro = {
+            nombre: nombre,
+            edad: edad,
+            ladrar: function () {
+              console.log("guauu guauu!!!")
+            }
+          }
+
+        🐷  console.log(perro);
+        // {nombre: "kEnAi", edad: 7, ladrar: ƒ}
+
+        🦕  perro.ladrar()
+        // guauu guauu!!!
+
+          const dog = {
+            nombre,
+            edad,
+            raza: "Callejero",
+            ladrar() {
+              console.log("guauu guauu guauu!!!")
+            }
+          }
+
+        🍗  console.log(dog);
+        // {nombre: "kEnAi", edad: 7, raza: "Callejero", ladrar: ƒ}
+
+        🔒  dog.ladrar();
+        // guauu guauu guauu!!!
+        </code>
+    </pre>       
+        <script src="" async defer></script>
+    
+    </body>
+</html>
