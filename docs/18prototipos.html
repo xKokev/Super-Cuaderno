@@ -19,11 +19,12 @@
       <br  />
     <pre class="pre">
         <code class="javascript">
+          ¿QUE ES UN PROTOTIPO? Es un mecanismo donde un objeto puede heredar (de un objeto padre) atributos y metodos 
             Clases - Modelo a seguir.
             Objetos - Es una instancia de una clase
             🦝 Atributos - es una característica o propiedad del objeto (son variables dentro de un objeto)
             🐙 Métodos - son las acciones que un objeto puede realizar (son funciones dentro de un objeto)
-
+            Ejemplo 1 
                 😸  const animal = {
                     nombre: "Snoopy",
                     sonar() {
@@ -42,65 +43,59 @@
                 console.log(animal2);                
                 // {nombre: "Lola Bunny", sonar: ƒ}
 
+                NO ES FUNCIONAL COPIAR Y PEGAR CODIGO (COMO EN EL EJEMPLO ANTERIOR) PARA ELLO USAREMOS LOS PROTOTIPOS  
+
                 🐤 Función constructora donde asignamos los métodos al Prototipo, no a la función como tal
+                    Recordar no se pueden usar las arrow function en esta seccion ya que detectan el this del objeto donde se encuentra y aqui seria el windows en esta funcion 
+                    Cuando trabajamos con funciones constructoras en JS los atributos y metodos usar el objeto this.
 
-                    🐁 function Animal(nombre, genero) {
-                    //Atributos
-                    this.nombre = nombre;
-                    this.genero = genero;
+                    🐁  Funcion constructora (ejemplo 2) (se puede optimizar como en el 3 ejemplo ya que tendremos duplicado el metodo sonar en estos ejemplos (no pasa nada si son pocos pero cuando ya sean varias constantes es util el ejemplo 3))
+                        function Animal(nombre, genero) {
+                        //Atributos
+                        this.nombre = nombre;
+                        this.genero = genero;
 
-                    //Métodos 
-                    this.sonar = function () {
-                      console.log("Hago sonidos por que estoy vivo");
-                    }
-                    this.saludar = function () {
-                      console.log(`Hola me llamo ${this.nombre}`);
-                    }
-                    }
-                    Función constructora donde asignamos los métodos al Prototipo, no a la función como tal
-                    /*  function Animal(nombre, genero) {
-                       //Atributos
-                       this.nombre = nombre;
-                       this.genero = genero;
-                     } */
+                        //Métodos 
+                        this.sonar = function () {
+                          console.log("Hago sonidos por que estoy vivo");
+                        }
+                        }
+                    const rocky = new Animal ("Rocky", "Macho");
+                      tiby = new Animal ("Tibisay", "Hembra");    
+                    
+                    console.log(rocky);
+                    // Animal {nombre: "Rocky", genero: "Macho", sonar: ƒ, saludar: ƒ}
+                    
+                    console.log(tiby);
+                    // Animal {nombre: "Tibisay", genero: "Hembra", sonar: ƒ, saludar: ƒ}
+
                 
-                    //Métodos agregados al prototipo de la función constructora
-                    /* Animal.prototype.sonar = function () {
-                      console.log("Hago sonidos por que estoy vivo");
-                    }
-                    Animal.prototype.saludar = function () {
-                      console.log(`Hola me llamo ${this.nombre}`);
-                    } */
-                
-                    //Herencia Prototípica
-                    /* function Perro(nombre, genero, tamanio) {
-                      this.super = Animal;
-                      this.super(nombre, genero);
-                      this.tamanio = tamanio;
-                    } */
-                
-                    //Perro está heredando de Animal
-                    /*  Perro.prototype = new Animal();
-                     Perro.prototype.constructor = Perro; */
-                
-                    //Sobreescritura de métodos del Prototipo padre en el hijo
-                    /* Perro.prototype.sonar = function () {
-                      console.log("Soy un perro y mi sonido es un ladrido");
-                    }
-                    Perro.prototype.ladrar = function () {
-                      console.log("Guauuu Guauuu !!!!");
-                    } */
-                
-                    /* const snoopy = new Perro("Snoopy", "Macho", "Mediano"),
-                      lolaBunny = new Animal("Lola Bunny", "Hembra");
-                    console.log(snoopy);
-                    console.log(lolaBunny);
-                    snoopy.sonar();
-                    snoopy.saludar();
-                    snoopy.ladrar();
-                    lolaBunny.sonar();
-                    lolaBunny.saludar();
-        </code>
+                  Ejemplo 3 Resolveremos el problemas de memoria para varias constantes asignadoles al prototipo de la funcion constructora animal el metodo sonar porque al generar una nueva instancia (una nueva constante del tipo animal) se esta duplicando el metodo sonar (para este ejemplo añadiremos un nuevo metodo llamado saludar)
+                  Lo optimo es dejarle a las funciones constructora los atributos y quitarle los metodos a la fucnion constructora y los metodos se los peguemos al prototipo 
+                        
+                  FUNCION CONSTRUCTORA DONDE ASIGNAMOS LOS METODOS AL PROTOTIPO  Y NO A LA FUNCION 
+                        function Animal(nombre, genero) {
+                        //Atributos
+                        this.nombre = nombre;
+                        this.genero = genero;
+                        }  
+
+                        //Métodos agregados a la funcion constructora 
+                        Animal.prototype.sonar = function () {
+                          console.log("Hago sonidos por que estoy vivo");
+                        }
+                        Animal.prototype.saludar = function () {
+                          console.log(`Hola me llamo ${this.nombre}`);
+                        }
+                        const rocky = new Animal ("Rocky", "Macho");
+                        tiby = new Animal ("Tibisay", "Hembra");    
+                      
+                      console.log(rocky);
+                      // Animal {nombre: "Rocky", genero: "Macho"}
+                      
+                      console.log(tiby);
+                      // Animal {nombre: "Tibisay", genero: "Hembra"}
+                      </code>
     </pre>       
         <script src="" async defer></script>
     
