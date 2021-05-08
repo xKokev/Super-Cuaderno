@@ -19,7 +19,11 @@
       <br  />
     <pre class="pre">
         <code class="javascript">
-            class Animal {
+          Las clases no reciben parametros para dar recibir propiedades usamos CONSTRUCTOR 
+          Los metodos si pueden recibir parametros 
+          
+          👻 Ejemplo 1  A diferencias de los prototipos cuando usamos clases ya los metodos no entran dentro del objeto lo cual es un plus ya que estan en el prototipo 
+                class Animal {
                 //el constructor es un método especial que se ejecuta en el momento de instanciar la clase
                 constructor(nombre, genero) {
                   this.nombre = nombre;
@@ -33,45 +37,82 @@
                   console.log(`Hola me llamo ${this.nombre}`);
                 }
               }
-              class Perro extends Animal {
-                constructor(nombre, genero, tamanio) {
-                  //con el método super() se manda a llamar el constructor de la clase padre
+              const rocky = new Animal("Rocky", "Macho");
+              mrp= new Animal("Mr Peannut Butter", "Macho");
+              console.log(rocky);
+              // Animal {nombre: "Rocky", genero: "Macho"}
+              rocky.saludar();
+              // Hola me llamo Rocky
+              rocky.sonar();
+              //  Hago sonidos por que estoy vivo
+
+              console.log(mrp);
+              // Animal {nombre: "Mr Peannut Butter", genero: "Macho"}
+              mrp.saludar();
+              // Hola me llamo Mr Peannut Butter
+              mrp.sonar();
+              // Hago sonidos por que estoy vivo
+
+              👽 Ejemplo 2 Herencia en Clases usando la palabra reservada extends 
+                  class Perro extends Animal {
+                  constructor(nombre, genero, tamanio) {
+                  //con el método super() se manda a llamar el constructor de la clase padre o sea que atributos tiene la clase padre que en este caso es Animal y tiene dos atributos que son nombre y genero 
                   super(nombre, genero);
                   this.tamanio = tamanio;
                   this.raza = null;
-                }
+                  }
                 sonar() {
                   console.log("Soy un perro y mi sonido es un ladrido");
                 }
                 ladrar() {
                   console.log("Guauuu Guauuu!!!");
                 }
-                //un método estático se pueden ejecutar sin necesidad de instanciar la clase
+              }
+              const rocky = new Animal("Rocky", "Macho");
+              bee= new Perro("Beethoven", "Macho", "Gigante");
+
+              console.log(rocky);
+              // Animal {nombre: "Rocky", genero: "Macho"}
+              rocky.saludar();
+              // Hola me llamo Rocky
+              rocky.sonar();
+              //  Hago sonidos por que estoy vivo
+              rocky.ladrar();
+              // no se ejecutara ya que rocky pertenece a la clase Animal y el metodo .ladrar pertenece a la clase Perro
+              
+              console.log(bee);
+              // Perro{nombre: "Beethoven", genero: "Macho", tamanio:"Gigante"}
+              bee.saludar();
+              // Hola me llamo Beethoven
+              bee.sonar();
+              // Soy un perro y mi sonido es un ladrido
+              bee.ladrar();
+              // Guauuu Guauuu!!!
+
+
+              EXTRA 
+              🐱 Métodos Estáticos
+              Se pueden ejecutar sin necesidad de instanciar la clase o sea sin ser añadidos a la clase 
                 static queEres() {
                   console.log("Los perros somos animales mamíferos que pertenecemos a la familia de los caninos. Somos considerados los mejores amigos del hombre.");
                 }
-                //Los setters y getters son métodos especiales que nos permiten establecer y obtener los valores de atributos de nuestra clase
+                Perros.queEres();
+                // Los perros somos animales mamíferos que pertenecemos a la familia de los caninos. Somos considerados los mejores amigos del hombre.
+
+              🦉Los Setters y Getters 
+              Son métodos especiales que nos permiten establecer y obtener los valores de atributos de nuestra clase
                 get getRaza() {
                   return this.raza;
                 }
                 set setRaza(raza) {
                   this.raza = raza;
-                }
-              }
-              Perro.queEres();
-              const mimi = new Animal("Mimi", "Hembra"),
-                scooby = new Perro("Scooby", "Macho", "Gigante");
-              console.log(mimi);
-              mimi.saludar();
-              mimi.sonar();
-              console.log(scooby);
-              scooby.saludar();
-              scooby.sonar();
-              scooby.ladrar();
+                }                     
               console.log(scooby.getRaza);
+              // null
               scooby.setRaza = "Grán Danés";
               console.log(scooby.getRaza);     
-        </code>
+              // Gran Danes 
+            </code>
     </pre>       
         <script src="" async defer></script>
     
