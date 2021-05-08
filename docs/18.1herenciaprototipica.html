@@ -15,29 +15,25 @@
         <script>hljs.highlightAll();</script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/sunburst.min.css">
 
-      <h1> Inner HTML </h1>
+      <h1>Herencia Prototipica</h1>
       <br  />
-      <h2>😏 🦊 😎 💩 🐱 🎲 🙈 🤡 🏎 🔫 🐸  </h2>
-       <p> Introducir HTML dentro de un documento </p>
-       <p> Escribir texto en un elemento: element.textContent = texto </p>
-       <p> HTML en un elemento: element.innerHTML = código HTML </p>
-       
-
-      
     <pre class="pre">
         <code class="javascript">
-        HTML   *h1 id="title"* Inner Titulo */h1*
-        const title = document.getElementById('title')
+            function Perro(nombre, genero, tamanio) {
+                this.super = Animal;
+                this.super(nombre, genero);
+                this.tamanio = tamanio;
+              } 
+              //Perro está heredando de Animal
+                Perro.prototype = new Animal();
+                Perro.prototype.constructor = Perro; 
+              Ya con esto podemos usar los metodos de animal con perro 
 
-        title.innerHTML = 'DOM - <span>Crear e insertar elementos en HTML no es bueno purque si son muchos elementos 
-        cada vez redibuja el DOM <span>'
-            No usar innerText porque esta descontinuado 
+              //Sobreescritura de métodos del Prototipo padre en el hijo Aqui redefinimos el metodo sonar
+                Perro.prototype.sonar = function () {
+                console.log("Soy un perro y mi sonido es un ladrido");
+                }
 
-        
-
-
-        
-        
         </code>
     </pre>       
         <script src="" async defer></script>
