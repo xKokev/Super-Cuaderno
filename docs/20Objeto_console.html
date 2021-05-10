@@ -19,26 +19,12 @@
       <br  />
     <pre class="pre">
         <code class="javascript">
-            console.log(console);
-            console.error("Esto es un error");
-            console.warn("Esto es un aviso");
-            console.info("Esto es un mensje informativo");
-            console.log("Un registro de lo que ha pasado en nuestra aplicación");
-            let nombre = "Jon",
-              apellido = "MirCha",
-              edad = 35;
-            console.log(nombre);
-            console.log(apellido);
-            console.log(edad);
-            console.log(nombre, apellido, edad);
-            console.log(`Hola mi nombre es ${nombre} ${apellido} y tengo ${edad} años.`);
-            console.log(`Hola mi nombre es %s %s y tengo %d años.`, nombre, apellido, edad);
-            console.clear();
-            console.log(window);
-            console.log(document);
+            🤠  Interesante
             console.dir(window);
             console.dir(document);
             console.clear();
+
+            🧠 Grupo estilo acordeon en la consola
             console.group("Cursos de @jonmircha en YouTube");
             console.log("Curso de JavaScript");
             console.log("Curso de Node.js");
@@ -46,16 +32,12 @@
             console.log("Curso de Flexbox");
             console.log("Curso de Diseño y Programación Web");
             console.groupEnd();
-            console.groupCollapsed("Cursos de @jonmircha en YouTube");
-            console.log("Curso de JavaScript");
-            console.log("Curso de Node.js");
-            console.log("Curso de PWAs");
-            console.log("Curso de Flexbox");
-            console.log("Curso de Diseño y Programación Web");
-            console.groupEnd();
-            console.clear();
+
+            😽 Tabla en la consola
             console.log(console);
             console.table(Object.entries(console).sort());
+
+            Arreglo en tabla y en la consola
             const numeros = [1, 2, 3, 4, 5],
               vocales = ["a", "e", "i", "o", "u"];
             console.table(numeros);
@@ -66,20 +48,27 @@
               color: "cafe"
             }
             console.table(perro);
-            console.clear();
-            console.time('Cuanto tiempo tarda mi código');
+ 
+            🎃 Herramienta para medir cuanto tiempo tarda en ejecutarse una porcion de codigo FLIPOOOOO 
+            console.time('Cuanto tiempo tarda mi código tiene que ser el mismo abajo y arriba');
             const arreglo = Array(1000000);
             for (let i = 0; i < arreglo.length; i++) {
               arreglo[i] = i;
             }
-            console.timeEnd('Cuanto tiempo tarda mi código');
-            //console.log(arreglo);
-            console.clear();
+            console.timeEnd('Cuanto tiempo tarda mi código tiene que ser el mismo abajo y arriba');
+            console.log(arreglo);
+            
+           
+
+
+
+            🦷 Herramienta para saber cuantas veces se ejecuto un evento o metodo
             for (let i = 0; i <= 100; i++) {
               console.count("código for");
               console.log(i);
             }
-            console.clear();
+            
+            🦶 Minilibreria dentro de las consola para ejecutar pruebas
             let x = 3,
               y = 2,
               pruebaXY = "Se espera que X siempre sea menor que Y";

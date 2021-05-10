@@ -19,21 +19,45 @@
       <br  />
     <pre class="pre">
         <code class="javascript">
-            /*
+            
             Expresiones Regulares
                Son una secuencia de caracteres que forma un patrón de búsqueda, principalmente utilizada para la búsqueda de patrones de cadenas de caracteres.
                https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular
                https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions
-           */
-       
-           /*  let cadena = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem fuga cupiditate dolores saepe, praesentium sit eaque recusandae id sapiente similique, laudantium voluptatum perferendis ea iure ad odio doloremque earum voluptate.";
-            let expReg = new RegExp("lorem", "ig");
+           
+            Sirve para validar formularios o lo que queramos, casi todas las expresiones regulares ya estan en Google
+
+           🐈 Modo1 
+           var re = new RegExp('patrón', 'banderas');
+           
+           🐩 Modo 2
+           var re = /patrón/banderas;
+           
+           🏴‍☠ Banderas (hay muchas recomendable ver la documentacion)
+           g - Búsqueda global
+           i - Búsqueda que no distingue entre mayúsculas y minúsculas.	
+           m - Búsqueda multilínea.	
+           s - Permite que el . coincida con caracteres de nueva línea.	
+           u - "unicode"; tratar un patrón como una secuencia de puntos de código Unicode.	
+           y - Realiza una búsqueda "pegajosa" que coincida a partir de la posición actual en la cadena de destino. 
+
+           TEST vs EXEC 
+           Test: simplemte te dice si encontro el patron dadas las banderas (true o false)
+           Exec: devuelve un array con el patron y el index donde encotro el patron (a pesar de ser una cadena de texto es como si esta se guaradara cada palabra en un array)
+
+           let cadena = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem fuga cupiditate dolores saepe, praesentium sit eaque recusandae id sapiente similique, laudantium voluptatum perferendis ea iure ad odio doloremque earum voluptate.";
+           
+           let expReg = new RegExp("lorem", "ig");
             console.log(expReg.test(cadena));
+            // true
             console.log(expReg.exec(cadena));
+            // ["lorem", index: 207, input: "Lorem ipsum dolor sit amet consectetur adipisicing…endis ea iure ad odio doloremque earum voluptate.", groups: undefined]
+
             let expReg2 = /lorem{1,}/ig;
             console.log(expReg2.test(cadena));
-            console.log(expReg2.exec(cadena)); */
-             
+            // true
+            console.log(expReg2.exec(cadena)); 
+            // ["lorem", index: 207, input: "Lorem ipsum dolor sit amet consectetur adipisicing…endis ea iure ad odio doloremque earum voluptate.", groups: undefined]
         </code>
     </pre>       
         <script src="" async defer></script>

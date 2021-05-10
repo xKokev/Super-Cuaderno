@@ -19,30 +19,49 @@
       <br  />
     <pre class="pre">
         <code class="javascript">
-            //Función Anónima Autoejecutables
-            (function () {
-              console.log("Mi primer IIFE");
+          🦸‍♀ Es una funcion donde se engloba todo el codigo que se desea ejecutar, no solo se definen sino tambien se ejecutan en el momento de la creacion
+
+          🦸‍♂ Fue muy utilizado antes en la epoca de JQuery
+          
+          🦸‍♂ En este tipo de funciones si es obligatorio usar el punto y coma para separar funciones para evitar errores 
+
+          🏋‍♀ Función Anónima Autoejecutables
+          
+          🤽‍♂ Ejemplo 1  
+          (function () {
+              console.log("Mi primera Función Anónima Autoejecutables");
             })();
+            // Mi primera Función Anónima Autoejecutables
+
+          🤸 Ejemplo 2    
             (function (d, w, c) {
-              console.log("Mi segunda IIFE");
+              console.log("Mi segunda Función Anónima Autoejecutables");
               console.log(d);
               console.log(w);
               c.log("Este es un console.log")
             })(document, window, console);
-            //Formas de escribir las funciones Anónimas Autoejecutables
-            //Clásica
+            //Mi segunda Función Anónima Autoejecutables
+            // #document​
+            // Window {window: Window, self: Window, document: document, name: "", location: Location, …}
+            // Este es un console.log
+
+            Formas de escribir las funciones Anónimas Autoejecutables
+            ♥ Clásica
             (function () {
               console.log('versión Clásica')
             })();
-            //La Crockford (JavaScript The Good Parts)
+            
+            ♣ La Crockford (JavaScript The Good Parts)
             ((function () {
               console.log('versión Crockford')
             })());
-            //Unaria
+            
+            ♦ Unaria
             +function () {
               console.log('versión Unaria')
             }();
-            //Facebook
+            
+            ♠ Facebook
             !function () {
               console.log('versión Facebook')
             }();

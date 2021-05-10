@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="estilos.css">
+        <link rel="shortcut icon" href="son-goku.png"> 
+    </head>
+    <body>
+        <!-- -Highlithg JS codigo añadido hay que moverlo a su respectivo archivo --> 
+        <script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"> </script>
+        <script>hljs.highlightAll();</script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/sunburst.min.css">
+
+      <h1>Bucles for of / for in</h1>
+      <br  />
+    <pre class="pre">
+        <code class="javascript">
+            Simplifica el bucle FOR sin tener que darñe un numero de vueltas exactas ni la necesidad de realizar un incremento  
+            🦨 FOR OF PARA ARRAYS
+            🦔 FOR IN PARA OBJETOS (pero en caso de que se use en un array recorrera la posicion del array y no los valores)
+
+            🐇 Estructura del bucle
+            for(let variable of estructura){
+                Código a ejecutar
+            }
+
+            🦦 Palabras reservadas de bucles
+                break - Rompe el bucle
+                continue - Se salta la(s) posicion(es) que le indequemos y después continúa su ejecución sin romper el bucle 
+            
+            🐀 Ejemplo 1 a la antigua antes ES6 
+            let names = ['Paco', 'José', 'Paula', 'María']
+
+            for (let i = 0; i < names.length; i++){
+                console.log(names[i]);
+            }
+            // Paco
+            // José
+            // Paula 
+            // María
+
+            🐜 Ejemplo 2 ARRAY FOR OF CONTINUE (continue salta la condicion y continua con el ciclo)
+            for(let name of names){
+                if(name==='Paula'){
+                    continue
+                }
+                console.log(name);
+            }
+            // Paco
+            // José
+            // María
+
+            🦅 Ejemplo 3 ARRAY FOR OF BREAK (break detiene el ciclo en ese punto)
+            for(let name of names){
+                if(name==='Paula'){
+                    break
+                }
+                console.log(name);
+            }
+            // Paco
+            // José
+
+            🦉 Ejemplo 4 ARRAY FOR IN CONTINUE 
+            for(let index in names){
+                if(names[index]==='Paula'){
+                    continue
+                }
+                console.log(index);
+            }
+            // 0
+            // 1
+            // 3
+
+            🐦 Ejemplo 5 OBJETO FOR IN 
+            const person = {
+                name: 'Juan',
+                age: 26,
+                sons: ['Laura', 'Diego', 'Pepe', 'Rosa', 'Tomás']
+             }
+             
+             for(const key in person){
+                 console.log(key);
+             }
+             // name
+             // age 
+             //sons
+
+             for(const key in person){
+                 console.log(person[key]);
+             }
+            // Juan
+            // 26
+            // (5) ["Laura", "Diego", "Pepe", "Rosa", "Tomás"]
+
+            for(const son of person.sons){
+                 console.log(son);
+             }
+            // Laura
+            // Diego
+            // Pepe
+            // Rosa
+            // Tomás
+             
+             console.log(`Hola ${person.name}. Tienes ${person.age} años y tus hijos se llaman ${person.sons.join(', ')}`);
+             // Hola Juan. Tienes 26 años y tus hijos se llaman Laura, Diego, Pepe, Rosa, Tomás
+
+        </code>
+    </pre>       
+        <script src="" async defer></script>
+    
+    </body>
+</html>
