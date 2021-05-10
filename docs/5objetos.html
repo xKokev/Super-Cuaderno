@@ -90,6 +90,43 @@
 
               ☎ console.log(jon.hasOwnProperty("nacimiento"));
               // false 
+              
+              Ejemplo 2 
+              
+            const person = {
+                name: 'Juan',
+                age: 26,
+                sons: ['Laura', 'Diego', 'Pepe', 'Rosa', 'Tomás']
+             }
+             console.log(person.name);
+             // Juan
+             console.log(person['name']); 
+             // Juan 
+             for(const key in person){
+                 console.log(key);
+             }
+             // name
+             // age 
+             //sons
+
+             for(const key in person){
+                 console.log(person[key]);
+             }
+            // Juan
+            // 26
+            // (5) ["Laura", "Diego", "Pepe", "Rosa", "Tomás"]
+
+            for(const son of person.sons){
+                 console.log(son);
+             }
+            // Laura
+            // Diego
+            // Pepe
+            // Rosa
+            // Tomás
+             
+             console.log(`Hola ${person.name}. Tienes ${person.age} años y tus hijos se llaman ${person.sons.join(', ')}`);
+             // Hola Juan. Tienes 26 años y tus hijos se llaman Laura, Diego, Pepe, Rosa, Tomás
                   
         </code>
     </pre>       

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="estilos.css">
+        <link rel="shortcut icon" href="son-goku.png"> 
+    </head>
+    <body>
+      <h1>Modulos </h1>
+      <br  />
+    <pre class="pre">
+        <code class="javascript">
+          NOTA Usare * en vez de mayot y menor debido a que la libreria paravisualizar codigo entiende que es un script y no se visualiza en la pagina
+          
+          1**Esto ira al final  dentro del body eb el documento HTML 
+          🦧 Script 1 Para poder importar archivos JS 
+          *script src="js/modulos.js" type="module"* */script*
+          🦍 Script 2 Para darle soporte a internet explorer 
+          *script src="js/no-modulos.js" nomodule* */script*
+          **1
+
+          2** Archivo Aritemetica.js 
+          function sumar(a, b) {
+            return a + b;
+          }
+          
+          function restar(a, b) {
+            return a - b;
+          }
+          
+          export const aritmetica = {
+            sumar,
+            restar
+          };
+          **2
+
+          **3 Archivo constantes.js  
+          export const PI = Math.PI;
+
+          export let usuario = "Jon";
+          
+          const password = "qwerty";
+          //export default password;
+          
+          const hello = () => console.log("Hola");
+          
+          export default function saludar() {
+            console.log("Hola Módulos +ES6");
+          }
+          
+          export class Saludar {
+            constructor() {
+              console.log("Hola Clases +ES6");
+            }
+          }
+          **3
+
+          **4 archivo modulos.js 
+          import saludar, { Saludar, PI, usuario } from "./constantes.js";
+          import { aritmetica as calculos } from "./aritmetica.js";
+          
+          console.log("Archivo modulos.js");
+          console.log(PI, usuario);
+          //console.log(aritmetica.sumar(3, 4));
+          console.log(calculos.sumar(3, 4));
+          console.log(calculos.restar(3, 4));
+          saludar();
+          let saludo = new Saludar();
+          saludo;
+          **4 
+
+          Es aconsejable ver este video 
+          <a href="https://www.youtube.com/watch?v=0GEUyQXe3NI&list=PLvq-jIkSeTUZ6QgYYO3MwG9EMqC-KoLXA&index=34">Aqui</a> 
+        </code>
+    </pre>       
+    <!-- -Highlithg JS codigo añadido hay que moverlo a su respectivo archivo --> 
+    <script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"> </script>
+    <script>hljs.highlightAll();</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/sunburst.min.css">
+        <script src="" async defer></script>
+    
+    </body>
+</html>

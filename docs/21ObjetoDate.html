@@ -20,30 +20,58 @@
     <pre class="pre">
         <code class="javascript">
             console.log(Date());
+            // Mon May 10 2021 13:53:22 GMT-0400 (hora de verano oriental)
+
             let fecha = new Date();
             console.log(fecha);
-            //día del mes
+            // Mon May 10 2021 13:53:22 GMT-0400 (hora de verano oriental)
+
+            🐷 Día del mes
             console.log(fecha.getDate());
-            //día de la semana D L M Mi J V S -> 0 1 2 3 4 5 6
+            // 10
+            
+            🐼 Dia de la semana D L M Mi J V S -> 0 1 2 3 4 5 6
             console.log(fecha.getDay());
-            //mes Ene Feb Mar Abr May Jun Jul Ago Sep Oct Nov Dic -> 0 1 2 3 4 5 6 7 8 9 10 11
+            // 1
+
+            🐶 Mes Ene Feb Mar Abr May Jun Jul Ago Sep Oct Nov Dic -> 0 1 2 3 4 5 6 7 8 9 10 11
             console.log(fecha.getMonth());
+            // 4
             console.log(fecha.getFullYear());
+            // 2021 (modo seguro para eviar errores)
             console.log(fecha.getHours());
+            // 13
             console.log(fecha.getMinutes());
+            // 53
             console.log(fecha.getSeconds());
+            // 22
             console.log(fecha.getMilliseconds());
+            // 715 
             console.log(fecha.toString());
+            //  Mon May 10 2021 13:53:22 GMT-0400 (hora de verano oriental)
             console.log(fecha.toDateString());
+            // Mon May 10 2021
             console.log(fecha.toLocaleString());
+            // 10/5/2021 13:53:22
             console.log(fecha.toLocaleDateString());
+            // 10/5/2021
             console.log(fecha.toLocaleTimeString());
+            // 13:53:22
             console.log(fecha.getTimezoneOffset());
+            // 240 [esto viene de el uso horario multip¿licado por 60 en este caso es 4*60=240]
             console.log(fecha.getUTCDate());
+            // 10
             console.log(fecha.getUTCHours());
+            // 17
+            
+            🐔 Cuantos segundos han pasado desde el 1 de enero de 1970, util para guardar algun registro en base de datos si necesitamos hacer sumas o restas de fechas conviene usar esto convirtiendolo a fechas 
             console.log(Date.now());
-            let cumpleJon = new Date(1984, 4, 23);
-            console.log(cumpleJon);      
+            // 1620666863277 
+            let cumpleK = new Date(1992, 3, 5);
+            console.log(cumpleK);      
+            // Sun Apr 05 1992 00:00:00 GMT-0500 (hora estándar oriental)
+
+            🦝 Moment.js buena libreria para usar el tiempo en JS 
         </code>
     </pre>       
         <script src="" async defer></script>
