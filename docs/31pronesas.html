@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="estilos.css">
+        <link rel="shortcut icon" href="son-goku.png"> 
+    </head>
+    <body>
+      <h1>Callbacks </h1>
+      <br  />
+    <pre class="pre">
+        <code class="javascript">
+          🍀 Una promesa es un objeto con 2 callbacks internos
+          🍄 Mas facil manejar errores y se evitan las piramidades de los callbacks 
+          
+          🐝 Ejemplo 1 
+          const users = [{ id: 1, name: 'Dorian' }, { id: 2, name: 'Laura' }, { id: 3, name: 'Carlos' }]
+          const emails = [{ id: 1, email: 'dorian@gmail.com' }, { id: 2, email: 'laura@gmail.com' }]
+
+          const getUser = (id) => {
+              const user = users.find(user => user.id == id)
+              return promise = new Promise((resolve, reject) => {
+                  if (!user) reject(`Doesn't exist an user with id ${id}`)
+                  else resolve(user)
+              })
+          }
+
+          const getEmail = (user) => {
+              const email = emails.find(email => email.id == user.id)
+              return promise = new Promise((resolve, reject) => {
+                  if (!email) reject(`${user.name} hasn't email`)
+                  else resolve({
+                      id: user.id,
+                      name: user.name,
+                      email: email.email
+                  })
+              })
+          }
+
+          /* es lo mismo de abajo 
+          getUser(2)
+              .then(user => getEmail(user))
+              .then(res => console.log(res))
+              .catch(err => console.log(err))
+          */
+
+          getUser(2)
+              .then(getEmail)
+              .then(console.log)
+              .catch(console.log)
+
+          🐛 Ejemplo 2
+          function cuadradoPromise(value) {
+            if (typeof value !== "number") {
+              return Promise.reject(`Error, el valor " ${value} " ingresado no es un número`);
+            }
+            return new Promise((resolve, reject) => {
+              setTimeout(() => {
+                resolve({
+                  value,
+                  result: value * value
+                });
+              }, 0 | Math.random() * 1000);
+            });
+          }
+          cuadradoPromise(0)
+            .then(obj => {
+              console.log('Inicio Promise');
+              console.log(`Promise: ${obj.value}, ${obj.result}`);
+              return cuadradoPromise(1);
+            })
+            .then(obj => {
+              console.log(`Promise: ${obj.value}, ${obj.result}`);
+              return cuadradoPromise(2);
+            })
+            .then(obj => {
+              console.log(`Promise: ${obj.value}, ${obj.result}`);
+              return cuadradoPromise(3);
+            })
+            .then(obj => {
+              console.log(`Promise: ${obj.value}, ${obj.result}`);
+              return cuadradoPromise("4");
+            })
+            .then(obj => {
+              console.log(`Promise: ${obj.value}, ${obj.result}`);
+              return cuadradoPromise(5);
+            })
+            .then(obj => {
+              console.log(`Promise: ${obj.value}, ${obj.result}`);
+              console.log('Fin Promise');
+            })
+            .catch(err => console.error(err));
+        </code>
+    </pre>       
+    <!-- -Highlithg JS codigo añadido hay que moverlo a su respectivo archivo --> 
+    <script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"> </script>
+    <script>hljs.highlightAll();</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/sunburst.min.css">
+        <script src="" async defer></script>
+    
+    </body>
+</html>

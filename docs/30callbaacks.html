@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="estilos.css">
+        <link rel="shortcut icon" href="son-goku.png"> 
+    </head>
+    <body>
+      <h1>Callbacks </h1>
+      <br  />
+    <pre class="pre">
+        <code class="javascript">
+          🌞 Un callback es una función que se ejecuta a través de otra función
+          🌝 Los callbacks no son asíncronos
+          🌛 Es dificl manejar errores en este tipo de callbacks si es util pero cuando se realizan muchas peticiones es dificl manejar errores
+          
+          ☁ Ejemplo 1 
+          const getUser = (id, cb) => {
+            const user = {
+                name: 'Dorian',
+                id: id
+            }
+            if (id == 2) cb('User not exist')
+            else cb(null, user)
+          }
+          getUser(1, (err, user) => {
+            if (err) return console.log(err)
+            console.log(`User name is ${user.name}`);
+          })
+
+          🌚 Ejemplo 2
+          function cuadradoCallback(value, callback) {
+            setTimeout(() => {
+              callback(value, value * value);
+            }, 0 | Math.random() * 1000);
+          }
+          cuadradoCallback(0, (value, result) => {
+            console.log("Inicia Callback");
+            console.log(`Callback: ${value}, ${result}`);
+            cuadradoCallback(1, (value, result) => {
+              console.log(`Callback: ${value}, ${result}`);
+              cuadradoCallback(2, (value, result) => {
+                console.log(`Callback: ${value}, ${result}`);
+                cuadradoCallback(3, (value, result) => {
+                  console.log(`Callback: ${value}, ${result}`);
+                  cuadradoCallback(4, (value, result) => {
+                    console.log(`Callback: ${value}, ${result}`);
+                    cuadradoCallback(5, (value, result) => {
+                      console.log(`Callback: ${value}, ${result}`);
+                      console.log("Fin Callback");
+                      console.log("Callback Hell !!!!!😈🤘");
+                      console.log("http://callbackhell.com/");
+                    });
+                  });
+                });
+              });
+            });
+          }); 
+
+          🌈 Ejemplo 3 
+              const users = [
+        {
+            id: 1,
+            name: 'Dorian'
+
+        },
+        {
+            id: 2,
+            name: 'Laura'
+        },
+        {
+            id: 3,
+            name: 'Carlos'
+        }
+      ]
+
+      const emails = [
+        {
+            id: 1,
+            email: 'dorian@gmail.com'
+        },
+        {
+            id: 2,
+            email: 'laura@gmail.com'
+        }
+      ]
+
+      const getUser = (id, cb) => {
+        const user = users.find(user => user.id == id)
+        if (!user) cb(`Not exist a user with id ${id}`)
+        else cb(null, user)
+      }
+
+      const getEmail = (user, cb) => {
+        const email = emails.find(email => email.id == user.id)
+        if (!email) cb(`${user.name} hasn't email`)
+        else cb(null, {
+            id: user.id,
+            name: user.name,
+            email: email.email
+        })
+      }
+
+      getUser(3, (err, user) => {
+        if (err) return console.log(err)
+
+        getEmail(user, (err, res) => {
+            if (err) return console.log(err)
+            getEmail(user, (err, res) => {
+                if (err) return console.log(err)
+                getEmail(user, (err, res) => {
+                    if (err) return console.log(err)
+                    getEmail(user, (err, res) => {
+                        if (err) return console.log(err)
+                        console.log(res);
+                    })
+                })
+            })
+        })
+      })
+        </code>
+    </pre>       
+    <!-- -Highlithg JS codigo añadido hay que moverlo a su respectivo archivo --> 
+    <script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"> </script>
+    <script>hljs.highlightAll();</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/sunburst.min.css">
+        <script src="" async defer></script>
+    
+    </body>
+</html>

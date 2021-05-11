@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="estilos.css">
+        <link rel="shortcut icon" href="son-goku.png"> 
+    </head>
+    <body>
+      <h1>Temporizadores </h1>
+      <br  />
+    <pre class="pre">
+        <code class="javascript">
+          🥕 SET TIME OUT recibe una funcion y un tiempo en ms y se ejecuta una sola vez transcurrido el tiempo dado 
+          setTimeout(() => {
+            console.log("Ejecutando un setTimeout, esto se ejecuta una sóla vez");
+          }, 3000);
+
+          🌽 SET INTERVAL recibe una funcion y un tiempo en ms y se repite cada vez segun el tiempo dado 
+          setInterval(() => {
+            console.log("Ejecutando un setInterval, esto se ejecuta indefinidaente cada cierto intervalo de tiempo");
+          }, 1000); 
+
+          let temporizador = setTimeout(() => {
+            console.log(new Date().toLocaleTimeString());
+          }, 1000);
+          // 11:29:47 a. m.
+
+          🧄 CLEAR TIME OUT cancela el setTimeout pero el setTimeout debe estar guardado en una variable
+          clearTimeout(temporizador);
+          // el setTimeout nunca se ejecuta ya que tiene 1 segundo de espera y el clearTimeout lo cancela antes
+
+          🥦 CLEAR INTERVAL cancela el clearInterval pero el setInterval debe estar guardado en una variable
+          let temporizador = setInterval(() => {
+            console.log(new Date().toLocaleTimeString());
+          }, 1000);
+          clearInterval(temporizador);
+          // el setInterval nunca se ejecuta ya que tiene 1 segundo de espera y el clearInterval lo cancela antes
+
+        </code>
+    </pre>       
+    <!-- -Highlithg JS codigo añadido hay que moverlo a su respectivo archivo --> 
+    <script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"> </script>
+    <script>hljs.highlightAll();</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/sunburst.min.css">
+        <script src="" async defer></script>
+    
+    </body>
+</html>
