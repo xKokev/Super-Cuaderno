@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="estilos.css">
+        <link rel="shortcut icon" href="son-goku.png"> 
+    </head>
+    <body>
+      <h1>Propedades Dinamicas </h1>
+      <br  />
+    <pre class="pre">
+        <code class="javascript">
+          Sirve para generar de manera dinamica las propiedades de un objeto 
+          
+          let aleatorio = Math.round(Math.random() * 100 + 5);
+          const objUsuarios = {
+            propiedad: "Valor",
+            [`id_${aleatorio}`]: "Valor Aleatorio"
+          };
+          console.log(objUsuarios);
+          // {propiedad: "Valor", id_47: "Valor Aleatorio"}
+
+          const usuarios = ["Jon", "Irma", "Miguel", "Kala", "kEnAi"];
+          usuarios.forEach((usuario, index) => objUsuarios[`id_${index}`] = usuario);
+          console.log(objUsuarios);  
+          // {propiedad: "Valor", id_47: "Valor Aleatorio", id_0: "Jon", id_1: "Irma", id_2: "Miguel", …}
+        </code>
+    </pre>       
+    <!-- -Highlithg JS codigo añadido hay que moverlo a su respectivo archivo --> 
+    <script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"> </script>
+    <script>hljs.highlightAll();</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/sunburst.min.css">
+        <script src="" async defer></script>
+    
+    </body>
+</html>

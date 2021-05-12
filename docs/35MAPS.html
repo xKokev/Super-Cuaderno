@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="estilos.css">
+        <link rel="shortcut icon" href="son-goku.png"> 
+    </head>
+    <body>
+      <h1>Maps</h1>
+      <br  />
+    <pre class="pre">
+        <code class="javascript">
+          🍁 MAP son objetos que funcionan para almacenar y es muy parecido a un objeto primitiivo, no son arrays pero en mapas podemos generar llaves que no sean cadenas de texto[no es nada aconsejable hacer eso]
+          
+          🌲 ESTABLECER VALORES 
+          const mapa = new Map();
+          mapa.set("nombre", "Jon");
+          mapa.set("apellido", "MirCha");
+          mapa.set("edad", 35);
+          console.log(mapa);
+          // Map(3) {"nombre" => "Jon", "apellido" => "MirCha", "edad" => 35}
+          console.log(mapa.size);
+          // 3
+          console.log(mapa.has("correo"));
+          // false 
+          console.log(mapa.has("nombre"));
+          // true 
+          console.log(mapa.get("nombre"));
+          // Jon
+
+          🍀 RESTABLECER VALOR
+          mapa.set("nombre", "Jonathan MirCha");
+          console.log(mapa.get("nombre"));
+          // Jonathan Mircha 
+
+          🌸 BORRAR VALOR
+          mapa.delete("apellido");
+
+          🍄 LLAVES QUE NO SON CADENAS DE TEXTO 
+          mapa.set(19, "diecinueve");
+          mapa.set(false, "falso");
+          mapa.set({}, {});
+          console.log(mapa);
+          // Map(5) {"nombre" => "Jonathan MirCha", "edad" => 35, 19 => "diecinueve", false => "falso", {…} => {…}}
+
+          🌳 RECORRER MAPA [se usa FOR OF pero no es un array]
+          for (let [key, value] of mapa) {
+            console.log(`Llave: ${key}, Valor:${value}`);
+          }
+          // Llave: nombre, Valor:Jonathan MirCha
+
+          🌴 MANERA DE INICIALIZAR VALORES DENTRO DE UN MAP 
+          const mapa2 = new Map([
+            ["nombre", "kEnAi"],
+            ["edad", 7],
+            ["animal", "perro"],
+            [null, "nulo"]
+          ]);
+          console.log(mapa2);
+          // Map(4) {"nombre" => "kEnAi", "edad" => 7, "animal" => "perro", null => "nulo"}
+
+          🌿 ALMACENAR LLAVES Y VALORES 
+          const llavesMapa2 = [...mapa2.keys()];
+          const valoresMapa2 = [...mapa2.values()];
+          console.log(llavesMapa2);
+          // (4) ["nombre", "edad", "animal", null]
+          console.log(valoresMapa2);
+          // (4) ["kEnAi", 7, "perro", "nulo"]
+        </code>
+    </pre>       
+    <!-- -Highlithg JS codigo añadido hay que moverlo a su respectivo archivo --> 
+    <script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"> </script>
+    <script>hljs.highlightAll();</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/sunburst.min.css">
+        <script src="" async defer></script>
+    
+    </body>
+</html>

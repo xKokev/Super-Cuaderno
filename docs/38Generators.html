@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="estilos.css">
+        <link rel="shortcut icon" href="son-goku.png"> 
+    </head>
+    <body>
+      <h1>Generators </h1>
+      <br  />
+    <pre class="pre">
+        <code class="javascript">
+          🍼 GENERADOR es convertir el codigo de una funcion en iterable 
+          
+          ☕ Es una funcion con la que se trabaja de una manera mas amigable con la interface de los iteradores en un elemento iterable 
+
+          🍵 Se añade un arteriscto * para que JS lo vea como un generador 
+
+          🍳 Funciona muy parecido como ASYN AWAIT (de cierta manera maneja elemento asincrono)
+
+          🍤 YIELD es como un especie de AWAIT 
+
+          🍣 Ejemplo 1
+          function* iterable() {
+            yield "hola";
+            console.log("Hola consola");
+            yield "hola 2";
+            console.log("Seguimos con más instrucciones de nuestro código");
+            yield "hola 3";
+            yield "hola 4";
+          }
+
+          let iterador = iterable();
+          for (let y of iterador) {
+            console.log(y);
+          }
+          // hola
+          // Hola consola
+          // hola 2
+          // Seguimos con más instrucciones de nuestro código
+          // hola 3
+          // hola 4
+          // Hola consola
+          // Seguimos con más instrucciones de nuestro código
+          //console.log(iterador.next()); Tambien podemos usar el NEXT 
+
+          Guardando en un arreglo los resulatados de una funcion generadora sin necesidad de esperar por los resultados
+          const arr = [...iterable()];
+          console.log(arr);
+          // (4) ["hola", "hola 2", "hola 3", "hola 4"]
+          
+          🧀 Ejemplo 2
+          function cuadrado(valor) {
+            setTimeout(() => {
+              return console.log({ valor, resultado: valor * valor })
+            }, Math.random() * 1000);
+          }
+          
+          function* generador() {
+            console.log("Inicia Generator");
+            yield cuadrado(0);
+            yield cuadrado(1);
+            yield cuadrado(2);
+            yield cuadrado(3);
+            yield cuadrado(4);
+            yield cuadrado(5);
+            console.log("Termina Generator");
+          }
+          let gen = generador();
+          for (let y of gen) {
+            console.log(y);
+          }
+          // Inicia Generator
+          // 6 undefined
+          // Termina Generator
+          // {valor: 1, resultado: 1}
+          // {valor: 4, resultado: 16}
+          // {valor: 2, resultado: 4}
+          // {valor: 5, resultado: 25}
+          // {valor: 3, resultado: 9}
+          // {valor: 0, resultado: 0}
+        </code>
+    </pre>       
+    <!-- -Highlithg JS codigo añadido hay que moverlo a su respectivo archivo --> 
+    <script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"> </script>
+    <script>hljs.highlightAll();</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/sunburst.min.css">
+        <script src="" async defer></script>
+    
+    </body>
+</html>
