@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="estilos.css">
+        <link rel="shortcut icon" href="son-goku.png"> 
+    </head>
+    <body>
+      <h1>Proxies </h1>
+      <br  />
+    <pre class="pre">
+        <code class="javascript">
+          🍌 Es un mecanismo que permite crear un objeto basado en un objeto literal inicial 
+          🍇 HANDLER es el manejador y da las reglas a seguir y usaremos SET 
+          const persona = {
+            nombre: "",
+            apellido: "",
+            edad: 0
+          }
+          const manejador = {
+            set(obj, prop, valor) {
+              if (Object.keys(obj).indexOf(prop) === -1) {
+                return console.error(`La propiedad "${prop}" no existe en el objeto persona.`);
+              }
+              if (
+                (prop === "nombre" || prop === "apellido") &&
+                !(/^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/g.test(valor))
+              ) {
+                return console.error(`La propiedad "${prop}"" sólo acepta letras y espacios en blanco`);
+              }
+              obj[prop] = valor;
+            }
+          }
+          const jon = new Proxy(persona, manejador);
+          jon.nombre = "Jon";
+          jon.apellido = "MirCha";
+          jon.edad = 35;
+          jon.twitter = "@jonmircha";
+          console.log(jon);
+          // Proxy {nombre: "Jon", apellido: "MirCha", edad: 35}
+          console.log(persona);
+          // {nombre: "Jon", apellido: "MirCha", edad: 35}
+        </code>
+    </pre>       
+    <!-- -Highlithg JS codigo añadido hay que moverlo a su respectivo archivo --> 
+    <script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"> </script>
+    <script>hljs.highlightAll();</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/sunburst.min.css">
+        <script src="" async defer></script>
+    
+    </body>
+</html>

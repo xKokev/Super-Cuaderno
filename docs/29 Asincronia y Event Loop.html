@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="estilos.css">
+        <link rel="shortcut icon" href="son-goku.png"> 
+    </head>
+    <body>
+      <h1>Asincronia y evento Loop </h1>
+      <br  />
+    <pre class="pre">
+        <code class="javascript">
+          Herramienta visual para ver la asincronia (no usar ES& para arriba)
+          <a href="http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D">Herramienta Loupe </a>
+          
+          🧙‍♂ Código Síncrono Bloquenate
+          console.log("Código Síncrono");
+          console.log("Inicio");
+          function dos() {
+            console.log("Dos");
+          }
+          function uno() {
+            console.log("Uno");
+            dos();
+            console.log("Tres");
+          }
+          uno();
+          console.log("Fin");
+          console.log("********************");
+          // Codigo sincrono
+          // Inicio
+          // uno
+          // Dos 
+          // Tres
+          // Fin 
+          // ********************
+          
+          🧝‍♀ Código Asíncrono No Bloquenate
+            console.log("Código Asíncrono");
+            console.log("Inicio");
+            function dos() {
+              setTimeout(function () {
+                console.log("Dos");
+              }, 1000);
+            }
+            function uno() {
+              setTimeout(function () {
+                console.log("Uno");
+              }, 0);
+              dos();
+              console.log("Tres");
+            }
+            uno();
+            console.log("Fin");
+            // Codigo Asincrono
+            // Inicio
+            // Tres
+            // Fin 
+            // Uno a pesar de que uno tiene un setTimeout de 0 ms es archivado a la pila de tareas por lo cual no se ejecuta enseguida 
+            // Dos 
+        </code>
+    </pre>       
+    <!-- -Highlithg JS codigo añadido hay que moverlo a su respectivo archivo --> 
+    <script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"> </script>
+    <script>hljs.highlightAll();</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/sunburst.min.css">
+        <script src="" async defer></script>
+    
+    </body>
+</html>

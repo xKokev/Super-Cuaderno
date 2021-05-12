@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="estilos.css">
+        <link rel="shortcut icon" href="son-goku.png"> 
+    </head>
+    <body>
+      <h1>Iterables & Iterators </h1>
+      <br  />
+    <pre class="pre">
+        <code class="javascript">
+          Hay una version mas sencilla con los generators 
+          ⚽ ITERABLE es el elemento que su contenido se puede recorrer
+          🏀 ITERADOR es el que lo recorre 
+
+          🏈 CASO 1 ARRAY
+          const iterable = [1, 2, 3, 4, 5];
+          const iterador = iterable[Symbol.iterator]();
+          console.log(iterable);
+          // (5) [1, 2, 3, 4, 5]
+          //Accedemos al iterador del iterable
+          console.log(iterador);
+          // Array Iterator {}
+
+          ⚾ CASO 2 SPRING 
+          const iterable = "Hola Mundo";
+          const iterador = iterable[Symbol.iterator]();
+          console.log(iterable);
+          // Hola Mundo 
+          //Accedemos al iterador del iterable
+          console.log(iterador);
+          // Spring Iterator {}
+
+          🥎 CASO 3 SET 
+          const iterable = new Set([1, 2, 3, 3, 4, 5]);
+          const iterador = iterable[Symbol.iterator]();
+          console.log(iterable);
+          //Accedemos al iterador del iterable
+          // Set(5) {1, 2, 3, 4, 5}
+          console.log(iterador);
+          // SetIterator {1, 2, 3, 4, 5}
+          
+          🏐 CASO 4 MAP 
+          const iterable = new Map([["nombre", "jon"], ["edad", 35]]);
+          const iterador = iterable[Symbol.iterator]();
+          console.log(iterable);
+          //Accedemos al iterador del iterable
+          // Map(2) {"nombre" => "jon", "edad" => 35}
+          console.log(iterador);
+          // MapIterator {"nombre" => "jon", "edad" => 35}
+
+          *************
+          const iterable = [1, 2, 3, 4, 5];
+          const iterador = iterable[Symbol.iterator]();
+          console.log(iterable);
+          // (5) [1, 2, 3, 4, 5]
+          //Accedemos al iterador del iterable
+          console.log(iterador);
+          // Array Iterator {}
+          
+          🎱 EJEMPLO 1 [INTERFAZ PARA RECORRER ELEMENTOS NO ITERABLE] 
+          console.log(iterador.next());
+          // 1
+          console.log(iterador.next());
+          // 2
+          console.log(iterador.next());
+          // 3
+          console.log(iterador.next());
+          // 4
+          console.log(iterador.next());
+          // 5
+          console.log(iterador.next());
+          // {value: udefined, done: true}
+          
+          🎾 EJEMPLO 2 [INTERFAZ PARA RECORRER ELEMENTOS NO ITERABLE]
+          let next = iterador.next();
+          while (!next.done) {
+            console.log(next.value);
+            next = iterador.next();
+          }
+          // 1
+          // 2
+          // 3
+          // 4
+          // 5
+          // {value: udefined, done: true}
+ 
+        </code>
+    </pre>       
+    <!-- -Highlithg JS codigo añadido hay que moverlo a su respectivo archivo --> 
+    <script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"> </script>
+    <script>hljs.highlightAll();</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/sunburst.min.css">
+        <script src="" async defer></script>
+    
+    </body>
+</html>

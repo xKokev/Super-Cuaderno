@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="estilos.css">
+        <link rel="shortcut icon" href="son-goku.png"> 
+    </head>
+    <body>
+      <h1>Funciones Asincronas </h1>
+      <br  />
+    <pre class="pre">
+        <code class="javascript">
+        SYMBOL se mantiene privado y para uso interno permite crear identificadores unicos y propiedades privadas de los Objetos
+        
+        let id = hola;
+        let id2 = hola;
+        console.log(id === id2)
+        // true
+        
+        let id = Symbol();
+        let id2 = Symbol();
+        console.log(id === id2)
+        // false
+        
+        let id = Symbol("id");
+        let id2 = Symbol("id2");
+        console.log(id, id2);
+        // Symbol(id) Symbol (id2)
+        console.log(typeof id, typeof id2);
+        // symbol symbol 
+        
+        const NOMBRE = Symbol("nombre");
+        const SALUDAR = Symbol("saludar");
+        const persona = {
+          [NOMBRE]: "Jon",
+          edad: 35
+        };
+        console.log(persona);
+        //{Symbol(): "Jon"}
+
+        persona.NOMBRE = "Jonathan MirCha"
+        console.log(persona);
+        // {NOMBRE: "Jonathan MirCha", Symbol(:"Jon")}
+        console.log(persona.NOMBRE);
+        // Jonathan MirCha
+        console.log(persona[NOMBRE]);
+        // Jon 
+
+        METODOS CON SYMBOL EN LOS OBJETOS
+        persona[SALUDAR] = function () {
+          console.log(`Hola`);
+        }
+        console.log(persona);
+        // {edad: 35, NOMBRE: "Jonathan MirCha", Symbol(nombre): "Jon", Symbol(saludar): ƒ}
+        persona[SALUDAR]();
+        // Hola 
+
+        for (let propiedad in persona) {
+          console.log(propiedad);
+          console.log(persona[propiedad]);
+        }
+        // NOMBRE
+        // Jonathan MirCha
+
+        lISTAR LOS SIMBOLOS O ATRIBUTOS PRIVADOS DE UN OBJETO
+        console.log(Object.getOwnPropertySymbols(persona));
+        // (2) [Symbol(nombre), Symbol(saludar)]
+
+        </code>
+    </pre>       
+    <!-- -Highlithg JS codigo añadido hay que moverlo a su respectivo archivo --> 
+    <script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"> </script>
+    <script>hljs.highlightAll();</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/sunburst.min.css">
+        <script src="" async defer></script>
+    
+    </body>
+</html>

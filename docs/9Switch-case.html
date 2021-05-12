@@ -19,6 +19,7 @@
       <br  />
     <pre class="pre">
         <code class="javascript">
+          EVITAR SU USO EXCESIVO UN OBJETO PUEDE SER UNA SOLUCION 
           domingo -0
           lunes - 1
           martes - 2
@@ -55,6 +56,30 @@
               break;
       }  
       //Martes 
+
+      BUENAS PRACTICAS cambiando por objetos 
+      switch(adversario){
+        case 'Iron-Man': 
+        loki = 'Magneto'
+        break; 
+
+        case 'Hulk' :
+        loki = 'Thanos'
+        break;
+
+        case 'Thor':
+        loki = 'Odin'
+        break;
+      }
+
+      const DEFAULT_LOKI = 'Loki'
+      const DISFRACES_LOKI ={
+        'Iron-Man': 'Magneto',
+        Hulk: 'Thanos',
+        Thor: 'Odin'
+      }
+      const loki = DISFRACES_LOKI[adversario] || DEFAULT_LOKI
+
         </code>
     </pre>       
         <script src="" async defer></script>
