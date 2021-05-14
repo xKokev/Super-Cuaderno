@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="estilos.css">
+        <link rel="shortcut icon" href="son-goku.png"> 
+    </head>
+    <body>
+      <h1>This </h1>
+      <br  />
+    <pre class="pre">
+        <code class="javascript">
+        🌉 El THIS en JS del lado del navegador hace referencia al objeto global en este caso Window pero si estuviera en Node me daria el objeto Global, hacer referencia al scope donde esta
+
+       
+        🌌 OBJETO THIS EN EL NAVEGADOR 
+        console.log(this);
+        // Window {window: Window, self: Window, document: document, name: "", location: Location, …}
+        console.log(window);
+        // Window {window: Window, self: Window, document: document, name: "", location: Location, …}
+        console.log(this === window);
+        // true 
+
+        🌃 ASIGNACION CON THIS   
+        this.nombre = "Contexto Global";
+        console.log(this.nombre);
+        // Contexto Global
+
+        🌆 THIS EN UNA FUNCION 
+        function imprimir() {
+          console.log(this.nombre);
+        }
+        imprimir();
+        // Contexto Global
+
+        🌇 THIS CON UN OBJETO 1 [IMPRIME OBJETO PORQUE FUE CREADA DENTRO DEL SCOPE DEL OBJETO ]
+        const obj = {
+          nombre: "Contexto Objeto",
+          imprimir: function () {
+            console.log(this.nombre);
+          }
+        }
+        obj.imprimir();
+        // Contexto Objeto
+
+        🎆 THIS CON UN OBJETO 2 [OBJETO VS CONTEXTO GLOBAL]
+        const obj2 = {
+          nombre: "Contexto Objeto 2",
+          imprimir
+        }
+        obj2.imprimir();
+        // Contexto Objeto 2
+
+        🌠 THIS CON UN OBJETO 3 [ARROW FUNCTION VS CONTEXTO GLOBAL ]
+        const obj3 = {
+          nombre: "Contexto Objeto 3",
+          imprimir: () => {
+            console.log(this.nombre);
+          }
+        }
+        obj3.imprimir();
+        // Contexto Global
+        </code>
+    </pre>       
+    <!-- -Highlithg JS codigo añadido hay que moverlo a su respectivo archivo --> 
+    <script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"> </script>
+    <script>hljs.highlightAll();</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/sunburst.min.css">
+        <script src="" async defer></script>
+    
+    </body>
+</html>

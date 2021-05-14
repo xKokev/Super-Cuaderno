@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="estilos.css">
+        <link rel="shortcut icon" href="son-goku.png"> 
+    </head>
+    <body>
+      <h1>Call Apply Blind </h1>
+      <br  />
+    <pre class="pre">
+        <code class="javascript">
+          Si bien this hace referencia al scope donde se encuentra con CALL APPLY BLIND podemos indicar donde se pueda aplicar 
+          🗿 En windows 
+          console.log(this);
+          // Window {window: Window, self: Window, document: document, name: "", location: Location, …}
+
+          🗽 En la funcion 
+          this.lugar = "Contexto Global";
+          function saludar(saludo, aQuien) {
+            console.log(`${saludo} ${aQuien} desde el ${this.lugar}`);
+          }
+          // Hola kEnAi desde el Contexto Global
+
+          🏰 En el objeto 
+          saludar("Hola", "kEnAi");
+          const obj = {
+            lugar: "Contexto Objeto"
+          }
+
+          🏟 CALL lo que hace esto es: usa el objeto saludar pero en otro contexto mando a "llamar" / "call" a otro this y en el caso de abajo es obj 
+          saludar.call(obj, "Hola", "Jon");
+          // Hola Jon desde el Contexto Objeto
+          saludar.call(null, "Hola", "Jon");
+          // Hola Jon desde el Contexto Global
+          saludar.call(this, "Hola", "Jon");
+          // Hola Jon desde el Contexto Global
+
+          🎡 APPLY funciona como CALL pero ademas de pasar el contexto puedo transmitir otros parametros [si pondemos null nos regresamos al contexto global, si usamos this iremos a donde este ese objeto   ]
+          saludar.apply(obj, ["Adios", "MirCha"]);
+          // Adios MirCha desde el Contexto Objeto
+          saludar.apply(null, ["Adios", "MirCha"]);
+          // Adios MirCha desde el Contexto Global
+          saludar.apply(this, ["Adios", "MirCha"]);
+          // Adios MirCha desde el Contexto Global
+          this.nombre = "Window";
+
+          🗼BIND hace un enlace es como en la arrow function que no generea un nuevo scope para si misma sino usa el scope donde fue creada 
+          const persona = {
+            nombre: "Jon",
+            saludar: function () {
+              console.log(`Hola ${this.nombre}`)
+            }
+          }
+          persona.saludar();
+          // Hola Jon 
+          
+          🏝 BIND 
+          const otraPersona = {
+            saludar: persona.saludar.bind(this)
+          }
+          otraPersona.saludar();
+          // Hola Window
+
+        </code>
+    </pre>       
+    <!-- -Highlithg JS codigo añadido hay que moverlo a su respectivo archivo --> 
+    <script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"> </script>
+    <script>hljs.highlightAll();</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/sunburst.min.css">
+        <script src="" async defer></script>
+    
+    </body>
+</html>
