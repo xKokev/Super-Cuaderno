@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="estilos.css">
+        <link rel="shortcut icon" href="son-goku.png"> 
+    </head>
+    <body>
+      <h1>Estilos y Variables CSS </h1>
+      <br  />
+    <pre class="pre">
+        <code class="javascript">
+        🍋 A nuestro HTML le añadimos un style="background-color: #F7DF1E; color: #222;"
+        a class="link-dom" data-id="1" data-description="Document Object Model" href="dom.html"
+        style="background-color: #F7DF1E; color: #222;">DOM 
+        
+        const $linkDOM = document.querySelector(".link-dom");
+        
+        🍌 Aqui es mejro ingresar con la NOTACION DEL PUNTO ya que nos suministra un mapa con todas las propiedades CSS validas escritas en formato cammel case sin el guin medio  
+        console.log($linkDOM.style);
+        // PUFF arroja todas las propiedades version cammelCase sin guion 
+        Importante las propiedades que se le asignan valor estan numeradas en este caso background-color y color 
+        // 0 background-color 
+        // 1 color 
+
+        🍉 Tambien es valido GET ATTRIBUTE pero no es tan usado [solo devuelve lo que hemos asignado valor previamente y vendria ser la propiedad cssText con la notacion del punto ]
+        console.log($linkDOM.getAttribute("style"));
+        // background-color: #F7DF1E; color: #222;
+
+        console.log($linkDOM.style.backgroundColor);
+        // rgb(247, 223, 30)
+        console.log($linkDOM.style.color);
+        // rgb(34, 34, 34)
+
+        🍇 Mapea las prpiedades CSS de un elemento   
+        console.log(window.getComputedStyle($linkDOM)); 
+        // Entrega todas las propiedades CSS como lo haciamos antes pero en vez de mostrarnos como vaio las propiedades que no tocamos y editada las propiedades que si en este caso nos maracara cada valor por defecto con su valor y si alguna propiedad fue editada estara editada segun las actualizaciones 
+        
+        🍒 Acceder a una proiedad en particular usaremis GET PROPERTY VALUE y escribir la propiedad que queremos
+        console.log(getComputedStyle($linkDOM).getPropertyValue("color"));
+        // rgb (34, 34 34)
+
+        🍑 Editar la propiedad usamos SET PROPERTY 
+        $linkDOM.style.setProperty("text-decoration", "none");
+        // DOM  [sin el subrayado de los enlaces ]
+
+        $linkDOM.style.setProperty("display", "block");
+        // DOM [ocupando todo el espacio a lo ancho debido que es un elemento de bloque]
+
+        🍍 Tambien podriamos acceder con la notacion del punto 
+        $linkDOM.style.width = "50%";
+        // DOM[ ocupando solo la mitad]
+        $linkDOM.style.textAlign = "center";
+        // DOM  [centrado]
+        $linkDOM.style.marginLeft = "auto";
+        // DOM [Margen]
+        $linkDOM.style.marginRight = "auto";
+        // DOM [Margen]
+        $linkDOM.style.padding = "1rem";
+        // DOM [un relleno de 1 rem]
+        $linkDOM.style.borderRadius = ".5rem";
+        // DOM [un radio de los bordes de 5rem]
+
+        🍕🍕 VARIABLES CSS - CUSTOM PROPERTIES CSS  🍕🍕
+        En CSS 
+        :root{
+            --yellow-color: #F7DF1E;
+            --dark-color: #222; 
+        }
+
+        const $html = document.documentElement,
+        $body = document.body;
+
+        🍟 Aceder a las propiedades con GET COMPUTED STYLE y luego acceder al valor con GET PROPERTY VALUE  
+        let varDarkColor = getComputedStyle($html).getPropertyValue("--dark-color"),
+        varYellowColor = getComputedStyle($html).getPropertyValue("--yellow-color");
+        console.log(varDarkColor, varYellowColor);
+        // #222 #F7DF1E
+
+        🍔 Aplicacion de las variables 
+        $body.style.backgroundColor = varDarkColor;
+        $body.style.color = varYellowColor;
+        // PUFF fondo negro-gris y letras amarillas 
+
+        🌭 Modificar alguna de las variables 
+        $html.style.setProperty("--dark-color", "pink");
+        // Y no pasa nada, simplemente lo escribe en el HTML asignando un nuevo valor a --dark-color
+
+        🌮 Cambiando el valor de la variable varDarkColor a rosado
+        varDarkColor = getComputedStyle($html).getPropertyValue("--dark-color");
+
+        🍣 Aplicacion al body del nuevo valor  
+        $body.style.setProperty("background-color", varDarkColor); 
+        // PUFFFF fondo rosa 
+        </code>
+    </pre>       
+    <!-- -Highlithg JS codigo añadido hay que moverlo a su respectivo archivo --> 
+    <script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"> </script>
+    <script>hljs.highlightAll();</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/sunburst.min.css">
+        <script src="" async defer></script>
+    
+    </body>
+</html>

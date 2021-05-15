@@ -14,8 +14,11 @@
       <br  />
     <pre class="pre">
         <code class="javascript">
-            https://www.json.org/json-es.html */
-            /* https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/JSON */
+          ❤️ Formato ligero de intercambio de datos, es un standart y funciona del lado del navegador y del servidor 
+
+          https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/JSON 
+
+          💙 Objeto que entiende el navegador   
             const json = {
               cadena: "Jon",
               numero: 35,
@@ -27,36 +30,80 @@
               },
               nulo: null
             }
+
+            🧡 Archivo JSON tal cual como estaria en un archivo aparte y si todo lleva comillas dobles 
+            {
+              "cadena": "Jon",
+              "numero": 35,
+              "booleano": true,
+              "arreglo": ["correr", "programar", "cocinar"],
+              "objeto": {
+                "twitter": "@jonmircha",
+                "email": "jonmircha@gmail.com"
+              },
+              "nulo": null
+            }
         
-            console.log(json);
+           console.log(json); 
+            // {cadena: "Jon", numero: 35, booleano: true, arreglo: Array(3), objeto: {…}, …}
         
+            
             console.log(JSON);
-        
+            // JSON {Symbol(Symbol.toStringTag): "JSON", parse: ƒ, stringify: ƒ}
+
+            🤍 PARSE analiza un JSON y lo convierte en un tipo que javascript valide un objeto arreglo boolean [si ya es un objeto valido en Js PARSE lo deja valido] 
             console.log("*** JSON.parse ***");
+            // *** JSON.parse ***
+
             console.log(JSON.parse("{}"));
+            // {} pero convertido en objeto 
+
             console.log(JSON.parse("[1,2,3]"));
+            // (3)[1, 2, 3]
             console.log(JSON.parse("true"));
+            // true [en azulito]
             console.log(JSON.parse("false"));
+            // false [en azulito]
             console.log(JSON.parse("19"));
-            console.log(JSON.parse('"Hola Mundo"'));
+            // 19 [en azulito]
+            console.log(JSON.parse('"Si soy un string escribeme con cadenas dobles y cadenas simples"'));
+            // Si soy un string escribeme con cadenas dobles y cadenas simples
             console.log(JSON.parse("null"));
-            //console.log(JSON.parse("undefined"));
+            // null 
+            console.log(JSON.parse("undefined"));
+            // error 
             console.log(JSON.parse('{ "x": 2, "y": 3 }'));
-        
+            // {"x":2,"y":3} [un objeto]
+
+            💜 STRINGIFY hace lo contrario de PARSE convierte un objeto valido de JS a cadena de texto 
             console.log("*** JSON.stringify ***");
+            // *** Ejemplo JSON ***
             console.log(JSON.stringify({}));
+            // {} [no es un objeto es una cadena de texto un corchetes y ya en gris ]
             console.log(JSON.stringify([1, 2, 3]));
+            // [1,2,3] [no es un array, es una cadena de texto un corchetes y ya en gris ]
             console.log(JSON.stringify(true));
+            // true [en gris]
             console.log(JSON.stringify(false));
+            // false [en gris]
             console.log(JSON.stringify(19));
-            console.log(JSON.stringify("Hola Mundo"));
+            // 19 [en gris]
+            console.log(JSON.stringify("No hace falta las comillas dobles y simples"));
+            // No hace falta las comillas dobles y simples
             console.log(JSON.stringify(null));
+            // null 
             console.log(JSON.stringify(undefined));
+            // undefined [ahora si lo permite sin error ]
             console.log(JSON.stringify({ x: 2, y: 3 }));
-        
+            // {"x":2,"y":3} [cadena de texto ]
             console.log("*** Ejemplo JSON ***");
+            // *** Ejemplo JSON ***
+            
             console.log(JSON.stringify(json));
+            // {"cadena":"Jon","numero":35,"booleano":true,"arreglo":["correr","programar","cocinar"],"objeto":{"twitter":"@jonmircha","email":"jonmircha@gmail.com"},"nulo":null} [en cadena de texto no es un objeto]
+
             console.log(JSON.parse('{"cadena": "Jon","numero": 35, "booleano": true,"arreglo": ["correr","programar","cocinar"],"objeto": {"twitter": "@jonmircha","email": "jonmircha@gmail.com"},"nulo": null}'));
+            // {cadena: "Jon", numero: 35, booleano: true, arreglo: Array(3), objeto: {…}, …} [si es un objeto]
           </script>
 
         </code>

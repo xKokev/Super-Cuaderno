@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="estilos.css">
+        <link rel="shortcut icon" href="son-goku.png"> 
+    </head>
+    <body>
+      <h1>Nodos, Elementos y Selectores </h1>
+      <br  />
+    <pre class="pre">
+        <code class="javascript">
+            Para interactuar con HTML nos interesa los nodos de tipo elemento y nodos de tiopo texto 
+            
+            ❌ GET ELEMENT BY CLASS
+            Recoge todos los elementos por tags en este cso li (Ya no se usa) 
+            console.log(document.getElementsByTagName("li"));
+
+            ❌ GET ELEMENT BY CLASS NAME 
+            Recoge elementos por nombre de clase (Ya no se usa) 
+            console.log(document.getElementsByClassName("card"));
+
+            ❌ GET BY NAME
+            Recoge elementos por el nombre name (Ya no se usa) 
+            console.log(document.getElementsByName("nombre"));
+
+            ✅ GET ELEMENT BY ID [Recomendable usar ]
+            Recoge selectores unicos  (mas rapido)
+            console.log(document.getElementById("menu"));
+
+            ✅ QUERY SELECTOR [Recomendable usar ]
+            Consulta de selector y recibe un parametro valido de css ID, CLASE [el primer selector que le hayas indicado es el que trae](es mas lento que el getElementById) 
+            console.log(document.querySelector("#menu"));
+
+            ✅ QUERY SELECTOR [Recomendable usar ]
+            Sirve para buscar todos los enlaces de una pagina  [pero solo trae al primer selector]
+            console.log(document.querySelector("a"));
+
+            ✅ QUERY SELECTOR ALL [Recomendable usar ]
+            Me permite traer todo el selector y no solo el primero 
+            console.log(document.querySelectorAll("a"));
+
+            🌝 Comparten propiedades como LENGTH 
+            console.log(document.querySelectorAll("a").length);
+
+            🌛 Comparte FOR EACH 
+            document.querySelectorAll("a").forEach((el) => console.log(el));
+            console.log(document.querySelector(".card"));
+            console.log(document.querySelectorAll(".card"));
+
+            🌜 Comparte la notacion de los corchetes de los arreglos 
+            console.log(document.querySelectorAll(".card")[2]);
+
+            🌚 Acepta selectores decendientes (solo los Li dentro del menu en este ejemplo )
+             console.log(document.querySelector("#menu li"));
+            console.log(document.querySelectorAll("#menu li"));
+        </code>
+    </pre>       
+    <!-- -Highlithg JS codigo añadido hay que moverlo a su respectivo archivo --> 
+    <script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"> </script>
+    <script>hljs.highlightAll();</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/sunburst.min.css">
+        <script src="" async defer></script>
+    
+    </body>
+</html>

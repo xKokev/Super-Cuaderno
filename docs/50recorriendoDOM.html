@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="estilos.css">
+        <link rel="shortcut icon" href="son-goku.png"> 
+    </head>
+    <body>
+      <h1>DOM Traversing: Recorriendo el DOM</h1>
+      <br  />
+    <pre class="pre">
+        <code class="javascript">
+            Propiedades que nos da la API del DOM para recorrerlo tomando como referencia un nodo 
+
+            .cards {
+                border.thin solid var(--dark-color);
+                padding : 1rem;
+            }
+
+            const $cards = document.querySelector(".cards");
+            console.log($cards);
+            // >section class="cards"< selecionando la seccion de las tarjetas 
+
+            Acceder a los hijos e iriamos a cada una de las tarjetas 
+            console.log($cards.children);
+
+            Acceder a un hijo especifico 
+            console.log($cards.children[2]);
+            // la tercera tarjetica
+            console.log($cards.parentElement);
+            // EL body 
+            console.log($cards.firstElementChild);
+            // Primer elemento hijo es la primera tarjeta
+            console.log($cards.lastElementChild);
+            // Ultimo  elemento hijo es la ultima tarjeta
+
+            El Hermano antes y despues 
+            console.log($cards.previousElementSibling);
+            console.log($cards.nextElementSibling);
+
+            CLOSEST hace referencia a los padres mas cercano del tipo selector que le demos 
+            console.log($cards.closest("div"));
+            // null
+            console.log($cards.closest("body"));
+            // body
+            console.log($cards.children[3].closest("section"));
+            // la misma section card 
+        </code>
+    </pre>       
+    <!-- -Highlithg JS codigo añadido hay que moverlo a su respectivo archivo --> 
+    <script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"> </script>
+    <script>hljs.highlightAll();</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/sunburst.min.css">
+        <script src="" async defer></script>
+    
+    </body>
+</html>

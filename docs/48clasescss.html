@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="estilos.css">
+        <link rel="shortcut icon" href="son-goku.png"> 
+    </head>
+    <body>
+      <h1>Clases CSS </h1>
+      <br  />
+    <pre class="pre">
+        <code class="javascript">
+          🎃  Estilos con los que jugaremos 
+            .cards {
+                border: thin solid var(--dark-color);
+                padding: 1rem;
+              }
+              .card {
+                display: inline-block;
+                background-color: var(--dark-color);
+                color: var(--yellow-color);
+              }          
+              .card figcaption {
+                padding: 1rem;
+              }          
+              .rotate-45 {
+                transform: rotate(45deg);
+              }          
+              .rotate-135 {
+                transform: rotate(135deg);
+              }          
+              .opacity-80 {
+                opacity: .8;
+              }          
+              .sepia {
+                filter: sepia(1);
+              }          
+              .eventos-flujo div {
+                padding: 4rem;
+                font-size: 2rem;
+                text-align: center;
+              }          
+              .uno {
+                background-color: yellow;
+              }          
+              .dos {
+                background-color: gold;
+              }          
+              .tres {
+                background-color: lightyellow;
+              }
+          const $card = document.querySelector(".card");
+          console.log($card);
+          // Traera la primera tarjeta 
+
+          console.log($card.className);
+          // card
+
+          🤡 Lo que tenemos en el CLASS NAME lo tengo en el atributo VALUE 
+          console.log($card.classList); 
+          // DOMTokensList["card", value:"card"]
+
+          👿 CONTAINS es un metodo boolean que nos dira si tiene el elemento conultado 
+          console.log($card.classList.contains("rotate-45"));
+          // false  
+
+          💩 ADD Añadir clase 
+          $card.classList.add("rotate-45");
+          console.log($card.classList.contains("rotate-45"));
+          // true 
+
+          👽 REMOVE Quita una clase 
+          $card.classList.remove("rotate-45");
+          console.log($card.classList.contains("rotate-45"));
+          // false 
+
+          👾 TOGGLE La palanca wuachoooo[si tiene la clase se la quita, si no tiene la clase se la añade]
+          $card.classList.toggle("rotate-45");
+          console.log($card.classList.contains("rotate-45"));
+          // true
+          $card.classList.toggle("rotate-45");
+          console.log($card.classList.contains("rotate-45"));
+          // false 
+
+          🤖 REPLACE remplaza con una nueva clase 
+          $card.classList.toggle("rotate-45");
+          $card.classList.replace("rotate-45", "rotate-135");
+          // Ahora tiene 135
+          
+          $card.classList.add("opacity-80", "sepia");
+          $card.classList.remove("opacity-80", "sepia");
+          $card.classList.toggle("opacity-80", "sepia");
+        </code>
+    </pre>       
+    <!-- -Highlithg JS codigo añadido hay que moverlo a su respectivo archivo --> 
+    <script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"> </script>
+    <script>hljs.highlightAll();</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/sunburst.min.css">
+        <script src="" async defer></script>
+    
+    </body>
+</html>
