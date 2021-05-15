@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="estilos.css">
+        <link rel="shortcut icon" href="son-goku.png"> 
+    </head>
+    <body>
+      <h1>Atributos y Data-Attributes </h1>
+      <br  />
+    <pre class="pre">
+        <code class="javascript">
+            Tendremos nuestro HTML  a class="link-dom" data-id="1" data-description="Document Object Modelo" href="dom.html"
+            style="background-color: #F7DF1E; color: #222;">DOM 
+
+            🐙 Como interactuar con los atributos de las etiquetas HTML 
+            
+            🐳 Podremos obtener los datos de dos maneras (muchas veces da lo mismo)
+            👆 Con la NOTACION DEL PUNTO 
+            ✌️ Con GET ATTRIBUTE (forma corecta)
+            console.log(document.documentElement.lang);
+            console.log(document.documentElement.getAttribute("lang"));
+
+            🦑 Otras veces nos da valores distintos 
+            console.log(document.querySelector(".link-dom").href);
+            // http://127.0.0.1:5500/
+            console.log(document.querySelector(".link-dom").getAttribute("href"));
+            // dom.html 
+
+            🐡 Establecer nuevo valor a los atributos 
+            Con notacion del punto 
+            document.documentElement.lang = "en";
+            console.log(document.documentElement.lang);
+            // en
+
+            🦞 Con SET [nombre del atributo , nuevo valor que queremos]
+            document.documentElement.setAttribute("lang", "es-MX");
+            console.log(document.documentElement.lang);
+            // es-MX 
+
+            🐠 Se puede usar let o const hay programadores que le ponemos un $variables a variables que guardan elementos del  DOM
+
+            🐟 Modificando elementos del DOM en este caso haremos que nuestro link abra en una nueva pestaña 
+            const $linkDOM = document.querySelector(".link-dom");
+            $linkDOM.setAttribute("target", "_blank");
+            
+            🐬 Por seguridad hacer que no haya una dependencia entre la pestaña que estamos abriebndo y la ventana origen 
+            $linkDOM.setAttribute("rel", "noopener");
+
+            🐢 Tambien podemos hacer que abra otro link 
+            $linkDOM.setAttribute("href", "https://youtube.com/jonmircha");
+            
+            🦈 Validando si tenemos el atributo rel y en este caso si porque lo añadimos antes 
+            console.log($linkDOM.hasAttribute("rel"));
+            // true
+
+            🐌 Eliminar atributos en el DOM 
+            $linkDOM.removeAttribute("rel");
+            console.log($linkDOM.hasAttribute("rel"));
+            // false 
+
+            🐊 DATA ATTRIBUTES  
+            DATA ATRIBUTES nos permite crear nuestros propios atributos [pare crear un nuevo data atributes usaremos DATA y un guion data-descripcion por ejemplo ]
+
+            console.log($linkDOM.getAttribute("data-description"));
+            // Document Object Modelo
+            console.log($linkDOM.dataset);
+            // DOMStringMap {description: Document Object Modelo"}
+
+            console.log($linkDOM.dataset.description);
+            // Document Object Modelo
+            🦓 Estableciendo nuevos valores con SET ATTRIBUTES (Nombre del atributo, nuevo valor que deseamos)
+            $linkDOM.setAttribute("data-description", "Modelo de Objeto del Documento");
+            console.log($linkDOM.dataset.description);
+            // Modelo de Objeto del Documento
+
+            🦛 Estableciendo nuevos valores CON NOTACION DEL PUNTO (.dataset.descripcion )[recordar que lo habiamos linkeado a youtube]
+            $linkDOM.dataset.description = "Suscríbete a mi canal y comparte";
+            console.log($linkDOM.dataset.description);
+            //  Suscríbete a mi canal y comparte
+            
+            🦏 Consulta si tiene algun atributo 
+            console.log($linkDOM.hasAttribute("data-id"));
+            // true
+
+            🦒 Eliminacion de atributos 
+            $linkDOM.removeAttribute("data-id");
+            console.log($linkDOM.hasAttribute("data-id"));
+            // false  
+        </code>
+    </pre>       
+    <!-- -Highlithg JS codigo añadido hay que moverlo a su respectivo archivo --> 
+    <script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"> </script>
+    <script>hljs.highlightAll();</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/sunburst.min.css">
+        <script src="" async defer></script>
+    
+    </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="estilos.css">
+        <link rel="shortcut icon" href="son-goku.png"> 
+    </head>
+    <body>
+      <h1>Texto y HTML</h1>
+      <br  />
+    <pre class="pre">
+        <code class="javascript">
+          const $whatIsDOM = document.getElementById("que-es");
+          let text = `
+              *p*
+                El Modelo de Objetos del Documento (*b* *i* DOM - Document Object Model */i* */b* ) es un API para documentos HTML y XML.
+              */p*
+              *p*
+                Éste proveé una representación estructural del documento, permitiendo modificar su contenido y presentación visual mediante código JS.
+              */p*
+              *p*
+                *mark* El DOM no es parte de la especificación de JavaScript, es una API para los navegadores.*/mark*
+              */p*
+            `;
+            ❌ INNER TEXT [NO USAR no forma parte del standart ] servia para añadir contenido textual a un elemento y no lee etiquetas HTML pero se respetan las indentaciones 
+          $whatIsDOM.innerText = text;
+
+          ✅ TEXT CONTENT [si forma aprte del standart ]Sirve para añadir texto (solo texto) 
+          $whatIsDOM.textContent = text;
+
+          ✅ INNER HTML remplaza el nodo de HTML por contenido HTML respetando las etiquetas HTML  (solo codigo)
+          $whatIsDOM.innerHTML = text;
+
+          🌐 REACT 
+          $whatIsDOM.outerHTML = text; 
+        </code>
+    </pre>       
+    <!-- -Highlithg JS codigo añadido hay que moverlo a su respectivo archivo --> 
+    <script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"> </script>
+    <script>hljs.highlightAll();</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/sunburst.min.css">
+        <script src="" async defer></script>
+    
+    </body>
+</html>
