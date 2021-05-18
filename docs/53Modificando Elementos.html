@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="estilos.css">
+        <link rel="shortcut icon" href="son-goku.png"> 
+    </head>
+    <body>
+      <h1>Creando Elementos y Fragmentos</h1>
+      <br  />
+    <pre class="pre">
+        <code class="javascript">
+      🧸 INSERT ADJACENT 
+      Inserta un elemento (posicion, elemento)
+        .insertAdjacentElement(position, el)
+        .insertAdjacentHTML(position, html)
+        .insertAdjacentText(position, text)
+      
+      🎁  Posiciones:
+        beforebegin(hermano anterior)
+        afterbegin(primer hijo)
+        beforeend(ultimo hijo)
+        afterend(hermano siguiente)
+    
+      
+        const $cards = document.querySelector(".cards"),
+        $newCard = document.createElement("figure");
+      let $contenCard = `
+        <img src="https://placeimg.com/200/200/any" alt="Any">
+        <figcaption></figcaption>
+      `;
+      $newCard.classList.add("card");
+      $newCard.insertAdjacentHTML("afterbegin", $contenCard);
+      da igual cual posicion pongamos ya que la tarjeta esta vacia
+      $newCard.querySelector("figcaption").insertAdjacentText("afterbegin", "Any"); 
+      
+    🎈 Tenemos dos opciones 
+    🎀 opcion 1
+      //$cards.insertAdjacentElement("beforeend", $newCard);
+
+    🎀  opcion 2 (al estilo jquery)
+      //$cards.prepend($newCard); (primer hijo)
+      //$cards.append($newCard); (ultimo hijo)
+      //$cards.before($newCard); (hermano anterior)
+      //$cards.after($newCard); (hermano siguiente)
+        </code>
+    </pre>       
+    <!-- -Highlithg JS codigo añadido hay que moverlo a su respectivo archivo --> 
+    <script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"> </script>
+    <script>hljs.highlightAll();</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/sunburst.min.css">
+        <script src="" async defer></script>
+    
+    </body>
+</html>
