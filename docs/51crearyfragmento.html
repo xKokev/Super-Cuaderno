@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="estilos.css">
+        <link rel="shortcut icon" href="son-goku.png"> 
+    </head>
+    <body>
+      <h1>Creando Elementos y Fragmentos</h1>
+      <br  />
+    <pre class="pre">
+        <code class="javascript">
+        🍼 CREATE ELEMENT 
+        Crea un elemento en el DOM con cualquier etiqueta valida en HTML 
+        
+        const $figure = document.createElement("figure"),
+        $img = document.createElement("img"),
+        $figcaption = document.createElement("figcaption"),
+
+        ☕ CREATE TEXT NODE crea nodos de texto 
+        $figcaptionText = document.createTextNode("Animals"),
+        $cards = document.querySelector(".cards"), 
+        
+        Añadiendo clase fuente y datos a la tarjeta 
+        $img.setAttribute("src", "https://placeimg.com/200/200/animals");
+        $img.setAttribute("alt", "Animals");
+        $figure.classList.add("card");
+
+        🧃 APPEND CHILD 
+        Agregar hijo
+        $figcaption.appendChild($figcaptionText);
+        $figure.appendChild($img);
+        $figure.appendChild($figcaption);
+        $cards.appendChild($figure);
+
+        🍯 CREACION RAPIDA PERO CON HTML 
+        $figure2 = document.createElement("figure");
+        $figure2.innerHTML = `
+        <img src="https://placeimg.com/200/200/people" alt="People">
+        <figcaption>People</figcaption>
+        `;
+        $figure2.classList.add("card");
+        $cards.appendChild($figure2);
+
+        🍩 CREACION DINAMICA DE UNA LISTA Y SU CONTENIDO ESTA EN UN ARRAY [TEXT CONTENT ][DOCUMENT. WRITE es mala practica ]
+        const estaciones = ["Primavera", "Verano", "Otoño", "Invierno"],
+        $ul = document.createElement("ul");
+        document.write("<h3>Estaciones del Año</h3>");
+        document.body.appendChild($ul);
+        estaciones.forEach((el) => {
+        const $li = document.createElement("li");
+        $li.textContent = el;
+        $ul.appendChild($li);
+        }); 
+
+        🍪 CREACION DINAMICA DE UNA LISTA Y SU CONTENIDO ESTA EN UN ARRAY [INNER HTML] T ][DOCUMENT. WRITE es mala practica ] 
+        Con INNER HTML se debe inicializar vacia ya que esta se va rellenando poco a poco para poder ir rellenandolo 
+        const continentes = ["África", "América", "Asia", "Europa", "Oceanía"],
+        $ul2 = document.createElement("ul");
+        document.write("<h3>Continentes del Mundo</h3>");
+        document.body.appendChild($ul2);
+        $ul2.innerHTML = "";
+        continentes.forEach((el) => ($ul2.innerHTML += `<li>${el}</li>`));
+        
+        🍿 FRAGMENTOS  [MANERA CORRECTA]
+        Agregar muchos elementos al DOM de una vez sin pegarle cada vuelta al DOM ya una vez cargados todos se le hace una respuesta al DOM con todo ya cargado 
+        
+        const meses = [
+            "Enero",
+            "Febrero",
+            "Marzo",
+            "Abril",
+            "Mayo",
+            "Junio",
+            "Julio",
+            "Agosto",
+            "Septiembre",
+            "Octubre",
+            "Noviembre",
+            "Diciembre",
+        ],
+        $ul3 = document.createElement("ul"),
+        $fragment = document.createDocumentFragment();
+        meses.forEach((el) => {
+        const $li = document.createElement("li");
+        $li.textContent = el;
+        $fragment.appendChild($li);
+        });
+        document.write("<h3>Meses del Año</h3>");
+        $ul3.appendChild($fragment);
+        document.body.appendChild($ul3); 
+        </code>
+    </pre>       
+    <!-- -Highlithg JS codigo añadido hay que moverlo a su respectivo archivo --> 
+    <script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"> </script>
+    <script>hljs.highlightAll();</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/sunburst.min.css">
+        <script src="" async defer></script>
+    
+    </body>
+</html>

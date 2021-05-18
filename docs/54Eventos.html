@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="estilos.css">
+        <link rel="shortcut icon" href="son-goku.png"> 
+    </head>
+    <body>
+      <h1>Manejadore sde eventos</h1>
+      <br  />
+    <pre class="pre">
+        <code class="javascript">
+        Los eventos son los mecanismos que tenemos en JavaScript para controlar las acciones del usuario y definir el comportamiento del documento en cierto momento o cuando se cumplan ciertas condiciones.
+        Las funciones que se ejecutan en un evento se llaman Event Handler (Manejador de Eventos).
+        AAAAAA
+        https://developer.mozilla.org/en-US/docs/Web/Events
+        */
+        /* function holaMundo() {
+          alert("Hola Mundo");
+          console.log(event);
+        }
+        function saludar(nombre = "Desconocid@") {
+          alert(`Hola ${nombre}`);
+          console.log(event);
+        }
+        const $eventoSemantico = document.getElementById("evento-semantico"),
+          $eventoMultiple = document.getElementById("evento-multiple"),
+          $eventoRemover = document.getElementById("evento-remover");
+        $eventoSemantico.onclick = holaMundo;
+        $eventoSemantico.onclick = function (e) {
+          alert("Hola Mundo Manejador de Eventos Semántico");
+          console.log(e);
+          console.log(event);
+        };
+        $eventoMultiple.addEventListener("click", holaMundo);
+        $eventoMultiple.addEventListener("click", (e) => {
+          alert("Hola Mundo Manejador de Eventos Múltiple");
+          console.log(e);
+          console.log(e.type);
+          console.log(e.target);
+          console.log(event);
+        });
+        $eventoMultiple.addEventListener("click", () => {
+          saludar();
+          saludar("Jon");
+        });
+        const removerDobleClick = (e) => {
+          alert(`Removiendo el evento de tipo ${e.type}`);
+          console.log(e);
+          $eventoRemover.removeEventListener("dblclick", removerDobleClick);
+          $eventoRemover.disabled = true;
+        };
+        $eventoRemover.addEventListener("dblclick", removerDobleClick); 
+        </code>
+    </pre>       
+    <!-- -Highlithg JS codigo añadido hay que moverlo a su respectivo archivo --> 
+    <script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"> </script>
+    <script>hljs.highlightAll();</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/sunburst.min.css">
+        <script src="" async defer></script>
+    
+    </body>
+</html>
