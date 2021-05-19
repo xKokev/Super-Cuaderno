@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="estilos.css">
+        <link rel="shortcut icon" href="son-goku.png"> 
+    </head>
+    <body>
+      <h1> Delegación de Eventos </h1>
+      <br  />
+    <pre class="pre">
+        <code class="javascript">
+          🦄 No es optimo asignar el listener cada vez, tampoco con un ciclo for each entones tendremos el evento asignado a un elemento padre superior y a partir de ahi buscando el selector que coincida a ver quien es el que origino el evento desencadenar la funcion que quiera al momento del evento, ejemplo en un form que tenga 30 inputs y cada uno tenga validaciones en lugar de trabajar el evento onchange de cada input o evento infocus el evento se lo asignamos al form directamente o mejor aun al nodo raiz que seria mi  DOCUMENT 
+           Tambien evitaremos la propagacion porque el evento es enlazado al nodo superior 
+
+          function flujoEventos(e) {
+            console.log(
+              `Hola te saluda ${this} el click lo originó ${e.target.className}`
+            );
+            //e.stopPropagation();
+          }
+          document.addEventListener("click", (e) => {
+            if (e.target.matches(".eventos-flujo div")) {
+              flujoEventos(e);
+            }
+            if (e.target.matches(".eventos-flujo a")) {
+              alert("Hola soy tu amigo y docente digital... Jonathan MirCha");
+              e.preventDefault();
+              //e.stopPropagation();
+            }
+          });
+        </code>
+    </pre>       
+    <!-- -Highlithg JS codigo añadido hay que moverlo a su respectivo archivo --> 
+    <script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"> </script>
+    <script>hljs.highlightAll();</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/sunburst.min.css">
+        <script src="" async defer></script>
+    
+    </body>
+</html>

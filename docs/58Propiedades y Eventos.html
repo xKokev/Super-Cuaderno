@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="estilos.css">
+        <link rel="shortcut icon" href="son-goku.png"> 
+    </head>
+    <body>
+      <h1>  BOM Propiedades y Eventos </h1>
+      <br  />
+    <pre class="pre">
+        <code class="javascript">
+          ❤️ El evento DOMContentLoaded es disparado cuando el documento HTML ha sido completamente cargado y parseado, sin esperar hojas de estilo, imágenes y subtramas para finalizar la carga.
+          El evento load se dispara cuando se ha detectado la carga completa de la página.
+          Es un error frecuente usar load cuando DOMContentLoaded es mucho más apropiado.
+          Peticiones asíncronas pausan el parseo del DOM.
+            
+            window.addEventListener("resize", (e) => {
+            console.clear();
+            console.log("********** Evento Resize **********");
+            console.log(window.innerWidth);
+            // 722
+            console.log(window.innerHeight);
+            // 617
+            console.log(window.outerWidth);
+            // 1280
+            console.log(window.outerHeight);
+            // 720 
+            console.log(e);
+          });
+          window.addEventListener("scroll", (e) => {
+            console.clear();
+            console.log("********** Evento Scroll **********");
+            console.log(window.scrollX);
+            console.log(window.scrollY);
+            console.log(e);
+          });
+
+          💚  LOAD
+          Muy lento
+          window.addEventListener("load", (e) => {
+            console.log("********** Evento Load **********");
+            console.log(window.screenX);
+            console.log(window.screenY);
+            console.log(e);
+          });
+
+          💜   DOM CONTENT LOAD 
+          es mas rapido que load PERO NO ESPERA A CARGAR CSS Y LO SCRIPT
+          document.addEventListener("DOMContentLoaded", (e) => {
+            console.log("********** Evento DOMContentLoaded **********");
+            console.log(window.screenX);
+            console.log(window.screenY);
+            console.log(e);
+          }); 
+        </code>
+    </pre>       
+    <!-- -Highlithg JS codigo añadido hay que moverlo a su respectivo archivo --> 
+    <script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"> </script>
+    <script>hljs.highlightAll();</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/sunburst.min.css">
+        <script src="" async defer></script>
+    
+    </body>
+</html>
