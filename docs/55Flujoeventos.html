@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="estilos.css">
+        <link rel="shortcut icon" href="son-goku.png"> 
+    </head>
+    <body>
+      <h1>Flujo de Eventos (Burbuja y Captura)</h1>
+      <br  /> 
+    <pre class="pre">
+        <code class="javascript">
+          🐶    Es recomendable la delegeacion de eventos 
+      Si no se especifica el parámetro boolean, el valor por defecto es false.
+      Si el boolean es falso se ejecuta la fase de burbuja (ir del elemento más interno al más externo *body*>)
+      Si el boolean es verdadero se ejecuta la fase de captura (ir del elemento más externo *body* al más interno)
+    
+      🐤    HTML *section class ="eventos-flujo"*
+          *div class="uno"*
+            1
+          *div class="dos"*
+            2
+          *div class="tres"*
+            3
+            */div*
+          */div*
+        */div*
+      */section*
+      
+      🐤 CSS 
+      .eventos-flujo div {
+        padding: 4rem;
+        font-size: 2rem;
+        text-align: center; 
+      }
+      .uno{
+        background-color: yellow;
+      }
+      .dos{
+        background-color: gold;
+      }
+      .tres{
+        background-color: lightyellow;
+      }
+
+
+      🐤 JS 
+        const $divsEventos = document.querySelectorAll(".eventos-flujo div");
+        function flujoEventos(e) {
+          console.log(
+            `Hola te saluda ${this.className}, el click lo originó ${e.target.className}`
+          );
+        }
+        console.log($divsEventos);
+        $divsEventos.forEach((div) => {
+          🐱   //Fase de burbuja
+          //div.addEventListener("click", flujoEventos);
+          //div.addEventListener("click", flujoEventos, false);
+
+          🐱  //Fase de captura
+          //div.addEventListener("click", flujoEventos, true);
+          div.addEventListener("click", flujoEventos, {
+            capture: false,
+            once: true,
+          });
+        }); 
+        </code>
+    </pre>       
+    <!-- -Highlithg JS codigo añadido hay que moverlo a su respectivo archivo --> 
+    <script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"> </script>
+    <script>hljs.highlightAll();</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/sunburst.min.css">
+        <script src="" async defer></script>
+    
+    </body>
+</html>

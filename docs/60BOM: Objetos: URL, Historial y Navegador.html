@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="estilos.css">
+        <link rel="shortcut icon" href="son-goku.png"> 
+    </head>
+    <body>
+      <h1>BOM: Objetos: URL, Historial y Navegador </h1>
+      <br  />
+    <pre class="pre">
+        <code class="javascript">
+            💋 ********** Objeto URL (location) **********
+        console.log(location);
+        // Location {ancestorOrigins: DOMStringList, href: "chrome://newtab/", origin: "chrome://newtab", protocol: "chrome:", host: "newtab", …}ancestorOrigins: DOMStringList {length: 0}assign: ƒ assign()hash: ""host: "newtab"hostname: "newtab"href: "chrome://newtab/"origin: "chrome://newtab"pathname: "/"port: ""protocol: "chrome:"reload: ƒ reload()replace: ƒ replace()search: ""toString: ƒ toString()valueOf: ƒ valueOf()Symbol(Symbol.toPrimitive): undefined__proto__: Location
+
+        console.log(location.origin);
+        // http://129.0.0.1:5500
+
+        console.log(location.protocol);
+        // http:
+        console.log(location.host);
+        // 129.0.0.1:5500
+        console.log(location.hostname);
+        // 129.0.0.1
+        console.log(location.port);
+        // 5500 
+        console.log(location.href);
+        //  http://129.0.0.1:5500/dom.html
+        console.log(location.hash);
+        // Detecta el valor despues de un hash
+        console.log(location.search);
+        // Detecta valores q pasan por la URL 
+        console.log(location.pathname);
+        // /dom.html
+        //location.reload();
+        recarga la pagina 
+
+
+        💋 ********** Objeto Historial (history) **********" 
+        console.log(history);
+        // guarda el almacenamiento de cuantas paginas para adelante y atras podemos ir 
+        console.log(history.length);
+        // Cuantas paginas hemos visitado 
+
+        Navegacion entre paginas FORWARD BACK
+        history.forward(1);
+        // Adelante
+        history.back(2);
+        // Atras
+        history.go(-3);
+        // Va directo al punto
+
+        💋 ********** Objeto Navegador (navigator) **********
+        console.log(navigator);
+        // Navigator {vendorSub: "", productSub: "20030107", vendor: "Google Inc.", maxTouchPoints: 1, userActivation: UserActivation, …}
+        console.log(navigator.connection); 
+        console.log(navigator.geolocation);
+        console.log(navigator.mediaDevices);
+        console.log(navigator.mimeTypes);
+        console.log(navigator.onLine);
+        console.log(navigator.serviceWorker);
+        console.log(navigator.storage);
+        console.log(navigator.usb);
+        console.log(navigator.userAgent);
+        </code>
+    </pre>       
+    <!-- -Highlithg JS codigo añadido hay que moverlo a su respectivo archivo --> 
+    <script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"> </script>
+    <script>hljs.highlightAll();</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/sunburst.min.css">
+        <script src="" async defer></script>
+    
+    </body>
+</html>

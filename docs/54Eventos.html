@@ -10,32 +10,73 @@
         <link rel="shortcut icon" href="son-goku.png"> 
     </head>
     <body>
-      <h1>Manejadore sde eventos</h1>
+      <h1>Manejadores de eventos</h1>
       <br  />
     <pre class="pre">
         <code class="javascript">
+        🧔  EVENT HANDLER 
         Los eventos son los mecanismos que tenemos en JavaScript para controlar las acciones del usuario y definir el comportamiento del documento en cierto momento o cuando se cumplan ciertas condiciones.
         Las funciones que se ejecutan en un evento se llaman Event Handler (Manejador de Eventos).
-        AAAAAA
-        https://developer.mozilla.org/en-US/docs/Web/Events
-        */
-        /* function holaMundo() {
+        Aplicar eventos como si fueran atributos es una mala practica  [los eventos que empiezan con ON]
+
+        🧕 https://developer.mozilla.org/en-US/docs/Web/Events
+
+        👴 EVENTO CON ATRIBUTO desde HTML[no muy correcta]
+        *button onclick="('Hola')"* Evento con atributo HTML */button*
+        
+        👩‍🦰 EVENTO CON ATRIBUTO DESDE UNA FUNCION MANEJADORA [no muy correcta] 
+        Cuando una funcion se vuelve un manejador de eventos la consola se ejecuta de esta manera
+        // MouseEvent{bla bla bla} un objeto del mouse 
+        Dos importantes: 1 type: "click", 2 target:"button" y 3 onclick: f onclick(event)
+        HTML  *button onclick="holaMundo()"* Evento con atributo HTML y funcion manejadora  */button*
+        JS
+        function holaMundo() {
           alert("Hola Mundo");
           console.log(event);
         }
-        function saludar(nombre = "Desconocid@") {
-          alert(`Hola ${nombre}`);
+
+        👶 EVENTO CON MANEJADOR SEMANTICO 
+        Algo malo es que una vez definido el evento semantico solo va a poder ejecutar una sola funcion 
+        Se iguala el evento semantico con el nombre de la funcion pero sin los parentisis para evitar que se ejecute en el navegador automaticamente 
+        Una funcion manejadora no puede recibir parametros [solo event ó e ]
+        HTML  *button id="evento-semantico"* Evento con manejador semantico  */button*
+        
+        👧 Ejemplo 1 [usando elementos como si fueran atributos del HTML][no es correcto]
+        HTML  *button id="evento-semantico"* Evento con atributo HTML  */button*
+        JS
+        function holaMundo() {
+          alert("Hola Mundo");
           console.log(event);
         }
-        const $eventoSemantico = document.getElementById("evento-semantico"),
-          $eventoMultiple = document.getElementById("evento-multiple"),
-          $eventoRemover = document.getElementById("evento-remover");
+        const $eventoSemantico = document.getElementById("evento-semantico");
         $eventoSemantico.onclick = holaMundo;
-        $eventoSemantico.onclick = function (e) {
-          alert("Hola Mundo Manejador de Eventos Semántico");
+        ALERTA // Hola Mundo [un pop up]
+        CONSOLA // MouseEvent{bla bla bla} un objeto del mouse 
+
+        👩‍🦱 Ejemplo 2 [puede ser una funcion anonima o una arrow function][mejora al ejemplo 1 pero no se pueden aplicar varias funciones a un mismo evento ya que se remplaza el valor]
+        HTML  *button id="evento-semantico"* Evento con manejador semantico  */button*
+        JS
+        function holaMundo() {
+          alert("Hola Mundo");
+          console.log(event);
+        }
+        const $eventoSemantico = document.getElementById("evento-semantico");
+        $eventoSemantico.onclick = function(e){
+          alert("Hola mundo desde manejador semantico")
           console.log(e);
           console.log(event);
-        };
+        } 
+        ALERTA // Hola mundo desde manejador semantico
+        CONSOLA // MouseEvent{bla bla bla} un objeto del mouse 
+                // MouseEvent{bla bla bla} un objeto del mouse 
+        
+        👵 Ejemplo 3 MANEJADORES MULTIPLES [varias funciones en un mismo elemento] [ADD EVENT LISTENER]  
+        HTML  *button id="evento-semantico"* Evento con manejador multiple */button*
+        JS 
+        function holaMundo() {
+          alert("Hola Mundo");
+          console.log(event);
+        }
         $eventoMultiple.addEventListener("click", holaMundo);
         $eventoMultiple.addEventListener("click", (e) => {
           alert("Hola Mundo Manejador de Eventos Múltiple");
@@ -44,10 +85,49 @@
           console.log(e.target);
           console.log(event);
         });
-        $eventoMultiple.addEventListener("click", () => {
-          saludar();
-          saludar("Jon");
+        ALERTA // Hola mundo 
+        ALERTA // Hola Mundo Manejador de Eventos Multiple
+        CONSOLA // MouseEvent{bla bla bla} un objeto del mouse 
+        CONSOLA // MouseEvent{bla bla bla} un objeto del mouse 
+        CONSOLA // click
+        CONSOLA // *button id="evento-multiple"* evento con manejador multiple */button*
+        CONSOLA // MouseEvent{bla bla bla} un objeto del mouse 
+    
+        👱‍♀️ Ejemplo 5       DAR PARAMETROS A LA FUNCION QUE EJECUTA UN EVENTO  
+        Haremos que la funcion saludar ya no sea la funcion manejadora del evento sino una arrow function 
+        HTML  *button id="evento-semantico"* Evento con manejador multiple */button*
+        JS
+        function saludar(nombre = "Desconocid@") {
+          alert(`Hola ${nombre}`);
+          console.log(event);
+        }
+        $eventoMultiple.addEventListener("click", holaMundo);
+        $eventoMultiple.addEventListener("click", (e) => {
+          alert("Hola Mundo Manejador de Eventos Múltiple");
+          console.log(e);
+          console.log(e.type);
+          console.log(e.target);
+          console.log(event);
         });
+        $eventoMultiple.addEventListener("click", ()=> { 
+        saludar();
+        saludar("Kevin")
+        });
+        ALERTA // Hola mundo 
+        ALERTA // Hola Mundo Manejador de Eventos Multiple
+        ALERTA // Hola Desconocid@
+        ALERTA // Hola Kevin
+        CONSOLA // MouseEvent{bla bla bla} un objeto del mouse 
+        CONSOLA // MouseEvent{bla bla bla} un objeto del mouse 
+        CONSOLA // click
+        CONSOLA // *button id="evento-multiple"* evento con manejador multiple */button*
+        CONSOLA // MouseEvent{bla bla bla} un objeto del mouse 
+
+        👩‍🦲 ELIMINAR EVENTOS DE UN ELEMENTO 
+        Para eliminar la funcion del evento esta debe estar declarada [no sirve con aarow functions o se le da un valor ]
+        HTML  *button id="evento-remover"* Removiendo eventos con manejadores multiple */button*
+        JS
+        const $eventoRemover = document.getElementById("evento-remover"); 
         const removerDobleClick = (e) => {
           alert(`Removiendo el evento de tipo ${e.type}`);
           console.log(e);

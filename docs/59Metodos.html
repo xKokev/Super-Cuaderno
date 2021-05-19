@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="estilos.css">
+        <link rel="shortcut icon" href="son-goku.png"> 
+    </head>
+    <body>
+      <h1>BOM: Métodos </h1>
+      <br  />
+    <pre class="pre">
+        <code class="javascript">
+          window.alert("Alerta");
+          //window.confirm("Confirmación");
+          //window.prompt("Aviso");
+
+          const $btnAbrir = document.getElementById("abrir-ventana"),
+            $btnCerrar = document.getElementById("cerrar-ventana"),
+            $btnImprimir = document.getElementById("imprimir-ventana");
+          let ventana;
+          $btnAbrir.addEventListener(
+            "click",
+            (e) => (ventana = window.open("https://jonmircha.com"))
+          );
+          $btnCerrar.addEventListener("click", (e) => {
+            //window.close();
+            ventana.close();
+          });
+
+          🙍‍♂️  Imprimir ventana 
+          $btnImprimir.addEventListener("click", (e) => window.print());
+                 
+        </code>
+    </pre>       
+    <!-- -Highlithg JS codigo añadido hay que moverlo a su respectivo archivo --> 
+    <script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"> </script>
+    <script>hljs.highlightAll();</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/sunburst.min.css">
+        <script src="" async defer></script>
+    
+    </body>
+</html>

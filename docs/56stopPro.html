@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="estilos.css">
+        <link rel="shortcut icon" href="son-goku.png"> 
+    </head>
+    <body>
+      <h1> stopPropagation & preventDefault</h1>
+      <br  />
+    <pre class="pre">
+        <code class="javascript">
+          👂 Recomendado usar delegacion de eventos 
+       HTML   
+          *section class="eventos-flujo"*
+            *div class="uno"*
+              1
+              *div class="dos"*
+                2
+                *div class="tres"*
+                  3
+                  *br*
+                  *a href="https://jonmircha.com/" target="_blank" rel="noopener">jonmircha.com */a*
+                */div*
+              */div*
+            */div*
+          */section*
+          👃   STOP PROPAGATION 
+          Evita la propagacion y solo donde estamos clickeando
+          JS 
+          const $divsEventos = document.querySelectorAll(".eventos-flujo div"),
+          $linkEventos = document.querySelector(".eventos-flujo a");
+        function flujoEventos(e) {
+          console.log(
+            `Hola te saluda ${this.className}, el click lo originó ${e.target.className}`
+          );
+          e.stopPropagation();
+        }
+        console.log($divsEventos);
+        $divsEventos.forEach((div) => {
+          //Fase de burbuja
+          div.addEventListener("click", flujoEventos);
+          //div.addEventListener("click", flujoEventos, false);
+          //Fase de captura
+          //div.addEventListener("click", flujoEventos, true);
+          //div.addEventListener("click", flujoEventos, {
+            //capture: false,
+            //once: true,
+          //});
+        });
+
+        👁  PREVENT DEFAULT 
+
+        $linkEventos.addEventListener("click", (e) => {
+          alert("Hola soy tu amigo y docente digital... Jonathan MirCha");
+          e.preventDefault();
+          e.stopPropagation();
+        }); 
+        </code>
+    </pre>       
+    <!-- -Highlithg JS codigo añadido hay que moverlo a su respectivo archivo --> 
+    <script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"> </script>
+    <script>hljs.highlightAll();</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/sunburst.min.css">
+        <script src="" async defer></script>
+    
+    </body>
+</html>
