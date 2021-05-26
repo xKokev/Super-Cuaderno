@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="estilos.css" />
+    <link rel="shortcut icon" href="son-goku.png" />
+  </head>
+  <body>
+    <h1>Axios + Async-Await</h1>
+    <br />
+    <pre class="pre">
+        <code class="javascript">
+      (() => {
+        const $axiosAsync = document.getElementById("axios-async"),
+          $fragment = document.createDocumentFragment();
+      
+        async function getData() {
+          try {
+            let res = await axios.get("https://jsonplaceholder.typicode.com/users"),
+              json = await res.data;
+      
+            //console.log(res, json);
+      
+            json.forEach((el) => {
+              const $li = document.createElement("li");
+              $li.innerHTML = `${el.name} -- ${el.email} -- ${el.phone}`;
+              $fragment.appendChild($li);
+            });
+      
+            $axiosAsync.appendChild($fragment);
+          } catch (err) {
+            //console.log(err.response);
+            let message = err.response.statusText || "Ocurrió un error";
+            $axiosAsync.innerHTML = `Error ${err.response.status}: ${message}`;
+          } finally {
+            //console.log("Esto se ejecutará independientemente del try... catch");
+          }
+        }
+      
+        getData();
+      })();
+        </code>
+    </pre>
+    <!-- -Highlithg JS codigo añadido hay que moverlo a su respectivo archivo -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"
+    ></script>
+    <script>
+      hljs.highlightAll();
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/sunburst.min.css"
+    />
+    <script src="" async defer></script>
+  </body>
+</html>

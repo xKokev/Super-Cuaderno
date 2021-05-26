@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="estilos.css" />
+    <link rel="shortcut icon" href="son-goku.png" />
+  </head>
+  <body>
+    <h1>API Fetch</h1>
+    <br />
+    <pre class="pre">
+        <code class="javascript">
+          (() => {
+            const $fetch = document.getElementById("fetch"),
+              $fragment = document.createDocumentFragment();
+          
+            //fetch("assets/users.json")
+            fetch("https://jsonplaceholder.typicode.com/users")
+              /* .then((res) => {
+                console.log(res);
+                return res.ok ? res.json() : Promise.reject(res);
+              }) */
+              .then((res) => (res.ok ? res.json() : Promise.reject(res)))
+              .then((json) => {
+                //console.log(json);
+                //$fetch.innerHTML = json;
+                json.forEach((el) => {
+                  const $li = document.createElement("li");
+                  $li.innerHTML = `${el.name} -- ${el.email} -- ${el.phone}`;
+                  $fragment.appendChild($li);
+                });
+          
+                $fetch.appendChild($fragment);
+              })
+              .catch((err) => {
+                //console.log(err);
+                let message = err.statusText || "Ocurrió un error";
+                $fetch.innerHTML = `Error ${err.status}: ${message}`;
+              })
+              .finally(() => {
+                //console.log("Esto se ejecutará independientemente del resultado de la Promesa Fetch")
+              });
+            })();
+        </code>
+    </pre>
+    <!-- -Highlithg JS codigo añadido hay que moverlo a su respectivo archivo -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"
+    ></script>
+    <script>
+      hljs.highlightAll();
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/sunburst.min.css"
+    />
+    <script src="" async defer></script>
+  </body>
+</html>
