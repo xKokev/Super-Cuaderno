@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="estilos.css">
-        <link rel="shortcut icon" href="son-goku.png"> 
-    </head>
-    <body>
-      <h1>ESLINT Prettier </h1>
-      <br  />
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="estilos.css" />
+    <link rel="shortcut icon" href="son-goku.png" />
+  </head>
+  <body>
+    <h1>ESLINT Prettier</h1>
+    <br />
     <pre class="pre">
         <code class="javascript">
             💋 npx eslint --init
@@ -29,14 +29,57 @@
                 "lint": "eslint . --fix"
               },
 
+              Desactivando reglas de ESLINT y stadart js (en el .eslintrc.js  )
+              // https://www.youtube.com/watch?v=EEDRcolSHms&t=1644s min 22:30
+                rules: {
+                    'react/react-in-jsx-scope': 'off',   
+                    'react/prop-types': 'off'
+                }
+
+
+             Pequeño diccionario en .eslintrc.js 
+             const RULES = {
+                OFF: 'off',
+                WARN: 'warn',
+                ERROR:'error'
+             }   
+             DEscativando react-in-jsx-scope y advirtinedo de react/prop-types
+            rules: {
+                'react/react-in-jsx-scope': 'RULES.OFF'
+                'react/prop-types': 'RULES.WARN' 
+            }
+
+            COnvivencia Prettier y ESSLINT 
+            paso 1    en consola ejecutar
+            yarn add eslint-config-prettier -D
+            Paso 2    en el archivo  .eslintrc.js añadir 'prettier' en el array extends  
+            extends[
+            'plugin:react/recommended',
+            'standart'
+            'prettier'
+            ],
+
+            yarn add prettier -D
+           
+            Crear un archivo .prettiererrc.json y ahi añadir exepciones y en .gitignore ignorarlo
+            {
+              "semi": false
+            }
 
         </code>
-    </pre>       
-    <!-- -Highlithg JS codigo añadido hay que moverlo a su respectivo archivo --> 
-    <script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"> </script>
-    <script>hljs.highlightAll();</script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/sunburst.min.css">
-        <script src="" async defer></script>
-    
-    </body>
+    </pre>
+    <!-- -Highlithg JS codigo añadido hay que moverlo a su respectivo archivo -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"
+    ></script>
+    <script>
+      hljs.highlightAll()
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/sunburst.min.css"
+    />
+    <script src="" async defer></script>
+  </body>
 </html>
