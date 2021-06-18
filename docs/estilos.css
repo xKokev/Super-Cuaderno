@@ -45,3 +45,6 @@
     display: flex;
 }
 
+:root{
+    background: rgb(5, 173, 185);
+}
